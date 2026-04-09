@@ -22,32 +22,29 @@
         .fv-bg { 
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000') center/cover; 
         }
-        /* 各要素を独立させて、必ず画面のセンターに配置するための指定 */
-        .flex-center-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* 左右の中央揃え */
-            text-align: center;   /* 文字自体の中央揃え */
+        /* 絶対に改行させない、かつ中央に配置するためのクラス */
+        .text-center-force {
+            text-align: center !important;
+            white-space: nowrap !important;
         }
-        .no-break { white-space: nowrap; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 leading-relaxed">
 
     <header class="fv-bg text-white py-24 md:py-36 px-6">
-        <div class="max-w-7xl mx-auto flex-center-column">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
             
-            <h1 class="text-xl md:text-5xl font-bold mb-10 tracking-wider w-full">
-                <span class="no-break">建物の申請だけで、地震保険を終わらせていませんか？</span>
+            <h1 class="text-xl md:text-5xl font-bold mb-10 tracking-wider text-center-force">
+                建物の申請だけで、地震保険を終わらせていませんか？
             </h1>
             
-            <p class="text-2xl md:text-4xl font-bold text-yellow-400 mb-12 tracking-tight w-full">
-                <span class="no-break">家財に眠る「正当な権利」、プロの事実整理で可視化します。</span>
+            <p class="text-2xl md:text-4xl font-bold text-yellow-400 mb-12 tracking-tight text-center-force">
+                家財に眠る「正当な権利」、プロの事実整理で可視化します。
             </p>
 
-            <div class="space-y-4 mb-16 w-full text-gray-200 text-base md:text-xl">
-                <p class="w-full"><span class="no-break">約款と損保協会の認定基準を熟知した専門チームが、あなたの「記憶」と「事実」を適正な報告書に整理。</span></p>
-                <p class="w-full"><span class="no-break">一部損（5%）と小半損（30%）の壁を越え、特約による最大化までを視野に入れた、完全成功報酬型のサービスです。</span></p>
+            <div class="space-y-4 mb-16 text-gray-200 text-base md:text-xl text-center">
+                <p class="text-center-force">約款と損保協会の認定基準を熟知した専門チームが、あなたの「記憶」と「事実」を適正な報告書に整理。</p>
+                <p class="text-center-force">一部損（5%）と小半損（30%）の壁を越え、特約による最大化までを視野に入れた、完全成功報酬型のサービスです。</p>
             </div>
 
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/viewform" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white text-lg md:text-2xl font-bold py-5 px-12 md:px-24 rounded-full shadow-2xl transition duration-300 transform hover:scale-105">
@@ -56,25 +53,25 @@
         </div>
     </header>
 
-    <section class="py-24 px-6 bg-white">
-        <div class="max-w-5xl mx-auto flex-center-column">
-            <h2 class="text-2xl md:text-4xl font-bold text-navy mb-16 border-b-2 border-navy pb-8 w-fit px-10">
+    <section class="py-24 px-6 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-navy mb-16 border-b-2 border-navy pb-8 text-center-force px-4">
                 こんな「思い込み」で、正当な保険金を諦めていませんか？
             </h2>
             
-            <div class="bg-gray-100 p-10 md:p-16 rounded-3xl mb-16 shadow-inner w-fit mx-auto">
+            <div class="bg-gray-100 p-10 md:p-16 rounded-3xl mb-16 shadow-inner inline-block mx-auto text-left">
                 <ul class="space-y-8 text-lg md:text-2xl font-medium">
-                    <li class="flex items-center justify-start">
+                    <li class="flex items-center">
                         <span class="text-red-500 mr-5 text-3xl">❌</span>
-                        <span class="no-break">お皿が数枚割れたくらいじゃ、対象にならないだろう</span>
+                        <span class="whitespace-nowrap">お皿が数枚割れたくらいじゃ、対象にならないだろう</span>
                     </li>
-                    <li class="flex items-center justify-start">
+                    <li class="flex items-center">
                         <span class="text-red-500 mr-5 text-3xl">❌</span>
-                        <span class="no-break">危ないからもう片付けて、壊れたものは捨ててしまった</span>
+                        <span class="whitespace-nowrap">危ないからもう片付けて、壊れたものは捨ててしまった</span>
                     </li>
-                    <li class="flex items-center justify-start">
+                    <li class="flex items-center">
                         <span class="text-red-500 mr-5 text-3xl">❌</span>
-                        <span class="no-break">自分で申請したから大丈夫（※上乗せ特約を見落としていませんか？）</span>
+                        <span class="whitespace-nowrap">自分で申請したから大丈夫（※上乗せ特約を見落としていませんか？）</span>
                     </li>
                 </ul>
             </div>
@@ -90,33 +87,33 @@
     <section class="py-24 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-navy mb-20 underline decoration-gold decoration-4 underline-offset-8">なぜ、HISAIDOが選ばれるのか</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="bg-white p-12 rounded-3xl shadow-xl border-t-8 border-navy text-left">
+            <div class="grid md:grid-cols-3 gap-12 text-left">
+                <div class="bg-white p-12 rounded-3xl shadow-xl border-t-8 border-navy flex flex-col">
                     <div class="text-navy text-6xl font-black mb-8 opacity-20">01</div>
                     <h3 class="text-2xl font-bold mb-6">コンプライアンスの徹底</h3>
-                    <p class="text-gray-600 text-lg">手数料目当ての強引な交渉や水増しは一切行いません。HISAIDOの役割は、あくまで事実の整理と算定資料の作成です。</p>
+                    <p class="text-gray-600 text-lg">手数料目当ての強引な交渉や水増しは一切行いません。事実の整理と算定資料の作成を徹底します。</p>
                 </div>
-                <div class="bg-white p-12 rounded-3xl shadow-xl border-t-8 border-navy text-left">
+                <div class="bg-white p-12 rounded-3xl shadow-xl border-t-8 border-navy flex flex-col">
                     <div class="text-navy text-6xl font-black mb-8 opacity-20">02</div>
-                    <h3 class="text-2xl font-bold mb-6 text-left">受給額の最大化</h3>
-                    <p class="text-gray-600 text-lg">「地震上乗せ特約」を正しく適用させれば、受給額は最大2倍になります。見落とされがちな権利を、プロの目でガードします。</p>
+                    <h3 class="text-2xl font-bold mb-6">受給額の最大化</h3>
+                    <p class="text-gray-600 text-lg">「地震上乗せ特約」を正しく適用させれば、受給額は最大2倍になります。プロの目で確実にガードします。</p>
                 </div>
-                <div class="bg-white p-12 rounded-3xl shadow-xl border-t-8 border-navy text-left">
+                <div class="bg-white p-12 rounded-3xl shadow-xl border-t-8 border-navy flex flex-col">
                     <div class="text-navy text-6xl font-black mb-8 opacity-20">03</div>
-                    <h3 class="text-2xl font-bold mb-6 text-left">成功報酬制</h3>
-                    <p class="text-gray-600 text-lg text-left">着手金は不要です。保険金受領後に報酬を頂戴します。認定されなかった場合、お客様の負担は0円です。</p>
+                    <h3 class="text-2xl font-bold mb-6">成功報酬制</h3>
+                    <p class="text-gray-600 text-lg">着手金は不要です。保険金受領後に報酬を頂戴します。認定されなかった場合、お客様の負担は0円です。</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-32 px-6 bg-gray-100">
-        <div class="max-w-5xl mx-auto flex-center-column">
-            <h2 class="text-2xl md:text-5xl font-bold text-navy mb-16 leading-tight">
-                <span class="text-gray-500 text-xl md:text-2xl block mb-6 no-break">「あの時、ちゃんと調べておけばよかった」と後悔する前に。</span>
-                <span class="block no-break">まずは無料で、その真実を可視化してみませんか？</span>
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <h2 class="text-2xl md:text-5xl font-bold text-navy mb-16 leading-tight text-center">
+                <span class="text-gray-500 text-xl md:text-2xl block mb-6 text-center-force">「あの時、ちゃんと調べておけばよかった」と後悔する前に。</span>
+                <span class="text-center-force">まずは無料で、その真実を可視化してみませんか？</span>
             </h2>
-            <p class="text-lg md:text-2xl text-gray-600 mb-16">地震保険の請求期限は原則3年。正当な権利を守るために、今すぐ一歩を踏み出しましょう。</p>
+            <p class="text-lg md:text-2xl text-gray-600 mb-16 text-center-force">地震保険の請求期限は原則3年。正当な権利を守るために、今すぐ一歩を踏み出しましょう。</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/viewform" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white text-xl md:text-3xl font-bold py-6 px-16 md:px-24 rounded-full shadow-2xl transition duration-300 transform hover:scale-105">
                 【無料】Web仮審査へ進む
             </a>
