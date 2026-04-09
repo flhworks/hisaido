@@ -9,202 +9,110 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        navy: '#0f172a',
-                        gold: '#b45309',
-                    }
+                    colors: { navy: '#0f172a', gold: '#b45309' }
                 }
             }
         }
     </script>
     <style>
-        body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-        .fv-bg { 
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000') center/cover; 
-        }
-        p { line-height: 1.8; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; }
+        .fv-bg { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000') center/cover; }
+        /* 文字が絶対に途中で折れないようにする設定 */
+        .no-break { white-space: nowrap; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
 
-    <header class="fv-bg text-white py-24 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
-                建物の申請だけで、地震保険を終わらせていませんか？
+    <header class="fv-bg text-white py-24 md:py-32 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-xl md:text-5xl font-bold mb-10 tracking-wider">
+                <span class="no-break">建物の申請だけで、地震保険を終わらせていませんか？</span>
             </h1>
-            <div class="max-w-3xl mx-auto mb-10">
-                <p class="text-xl md:text-2xl font-semibold text-yellow-400 mb-6">
-                    家財に眠る「正当な権利」、<br class="md:hidden">プロの事実整理で可視化します。
+            
+            <div class="mb-12">
+                <p class="text-2xl md:text-4xl font-bold text-yellow-400 mb-10 tracking-tight">
+                    <span class="no-break">家財に眠る「正当な権利」、プロの事実整理で可視化します。</span>
                 </p>
-                <p class="text-base md:text-lg text-gray-200 mb-4 text-left md:text-center">
-                    約款と損保協会の認定基準を熟知した専門チームが、あなたの「記憶」と「事実」を適正な報告書に整理。
-                </p>
-                <p class="text-base md:text-lg text-gray-200 text-left md:text-center">
-                    一部損（5%）と小半損（30%）の壁を越え、特約による最大化（100%補償）までを視野に入れた、完全成功報酬型のコンサルティングサービスです。
-                </p>
+                <div class="max-w-4xl mx-auto space-y-4 text-gray-200 text-base md:text-xl">
+                    <p><span class="no-break">約款と損保協会の認定基準を熟知した専門チームが、あなたの「記憶」と「事実」を適正な報告書に整理。</span></p>
+                    <p><span class="no-break">一部損（5%）と小半損（30%）の壁を越え、特約による最大化までを視野に入れた、完全成功報酬型のサービスです。</span></p>
+                </div>
             </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/viewform" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 px-8 md:px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/viewform" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white text-lg md:text-2xl font-bold py-5 px-10 md:px-20 rounded-full shadow-2xl transition duration-300 transform hover:scale-105">
                 【無料】たった3分で受給予測！Web仮審査へ進む
             </a>
         </div>
     </header>
 
-    <section class="py-16 px-6 bg-white">
+    <section class="py-20 px-6 bg-white">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-navy text-center mb-10 border-b-2 border-navy pb-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy text-center mb-12 border-b-2 border-navy pb-6">
                 こんな「思い込み」で、正当な保険金を諦めていませんか？
             </h2>
-            <div class="bg-gray-100 p-6 rounded-lg mb-8">
-                <ul class="space-y-4 text-lg">
-                    <li class="flex items-start"><span class="text-red-500 font-bold mr-3 text-xl">❌</span><span>お皿が数枚割れたくらいじゃ、対象にならないだろう</span></li>
-                    <li class="flex items-start"><span class="text-red-500 font-bold mr-3 text-xl">❌</span><span>危ないからもう片付けて、壊れたものは捨ててしまった</span></li>
-                    <li class="flex items-start"><span class="text-red-500 font-bold mr-3 text-xl">❌</span><span>自分で申請したから大丈夫（※上乗せ特約を見落としていませんか？）</span></li>
+            
+            <div class="bg-gray-100 p-8 md:p-12 rounded-2xl mb-12 shadow-inner">
+                <ul class="space-y-6 text-lg md:text-2xl font-medium">
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-4">❌</span>
+                        <span class="no-break">お皿が数枚割れたくらいじゃ、対象にならないだろう</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-4">❌</span>
+                        <span class="no-break">危ないからもう片付けて、壊れたものは捨ててしまった</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-4">❌</span>
+                        <span class="no-break">自分で申請したから大丈夫（※上乗せ特約を見落としていませんか？）</span>
+                    </li>
                 </ul>
             </div>
-            <div class="border-l-4 border-navy pl-6 py-2">
-                <h3 class="text-xl font-bold text-navy mb-4">【HISAIDOからの事実】</h3>
-                <p class="mb-4">
-                    地震保険における家財の損害は、「見た目の傷」だけではありません。約款上の認定基準である「転倒」「落下」「汚損」という事実を正確に申告できるかどうかが、受給額の桁を決定づけます。
-                </p>
-                <p>
-                    ご自身での適当な申請では「一部損（5%）」で終わる被害も、プロの視点で事実を網羅することで「小半損（30%）」の認定基準を満たし、受給額が数百万円変わるケースが多発しています。
-                </p>
+
+            <div class="border-l-4 border-navy pl-8 py-2">
+                <h3 class="text-xl font-bold text-navy mb-6">【HISAIDOからの事実】</h3>
+                <p class="mb-6 text-lg">地震保険における家財の損害は、「見た目の傷」だけではありません。約款上の認定基準である「転倒」「落下」「汚損」という事実を正確に申告できるかどうかが、受給額の桁を決定づけます。</p>
+                <p class="text-lg">プロの視点で事実を網羅することで、受給額が数百万円変わるケースが多発しています。</p>
             </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-gray-50">
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-navy mb-16 underline decoration-gold decoration-4 underline-offset-8">なぜ、HISAIDOが選ばれるのか</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-10 rounded-2xl shadow-lg border-t-8 border-navy text-left">
+                    <div class="text-navy text-5xl font-black mb-6 opacity-20">01</div>
+                    <h3 class="text-xl font-bold mb-6">コンプライアンスの徹底</h3>
+                    <p class="text-gray-600">手数料目当ての強引な交渉や水増しは一切行いません。HISAIDOの役割は、あくまで約款に基づいた「事実の整理と算定資料の作成」です。</p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-lg border-t-8 border-navy text-left">
+                    <div class="text-navy text-5xl font-black mb-6 opacity-20">02</div>
+                    <h3 class="text-xl font-bold mb-6">受給額の最大化</h3>
+                    <p class="text-gray-600">「地震上乗せ特約」を正しく適用させれば、受給額は最大2倍になります。見落とされがちな権利を、プロの目でガードします。</p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-lg border-t-8 border-navy text-left">
+                    <div class="text-navy text-5xl font-black mb-6 opacity-20">03</div>
+                    <h3 class="text-xl font-bold mb-6">成功報酬制</h3>
+                    <p class="text-gray-600">着手金は不要です。保険金受領後に報酬を頂戴します。認定されなかった場合、お客様の負担は0円です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-gray-100 text-center">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-navy text-center mb-12">
-                なぜ、HISAIDOが選ばれるのか。<br class="hidden md:block">徹底したコンプライアンスと専門性。
+            <h2 class="text-2xl md:text-4xl font-bold text-navy mb-12 leading-snug">
+                <span class="no-break text-gray-500 text-xl md:text-2xl block mb-4">「あの時、ちゃんと調べておけばよかった」と後悔する前に。</span>
+                <span class="block mb-4">まずは無料で、その真実を可視化してみませんか？</span>
             </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-navy">
-                    <div class="text-navy text-4xl font-bold mb-4">01</div>
-                    <h3 class="text-xl font-bold mb-4">コンプライアンスの徹底<br><span class="text-sm text-gray-600 font-normal">（非弁行為の排除）</span></h3>
-                    <p class="text-gray-600 mb-3">
-                        手数料目当ての強引な「交渉代行」や「被害の水増し」は一切行いません。
-                    </p>
-                    <p class="text-gray-600">
-                        HISAIDOの役割は、あくまで約款の定義に基づいた「事実の整理と算定資料の作成」です。ご自身の言葉で堂々と正当な申請ができるよう、黒子として徹底サポートします。
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-navy">
-                    <div class="text-navy text-4xl font-bold mb-4">02</div>
-                    <h3 class="text-xl font-bold mb-4">「特約」を含めた<br>受給額の最大化</h3>
-                    <p class="text-gray-600 mb-3">
-                        特定の保険会社に付帯される「地震上乗せ特約」。これを正しく適用させれば、受給額は最大2倍になります。
-                    </p>
-                    <p class="text-gray-600">
-                        多くの被災者が気付かずに捨ててしまっているこの権利を、プロの目で確実にガードします。
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-navy">
-                    <div class="text-navy text-4xl font-bold mb-4">03</div>
-                    <h3 class="text-xl font-bold mb-4">完全成功報酬・<br>持ち出しゼロ</h3>
-                    <p class="text-gray-600 mb-3">
-                        着手金や調査費用は一切不要です。保険金がお客様の口座に振り込まれた後、受領金額の25%を報酬として頂戴します。
-                    </p>
-                    <p class="text-gray-600">
-                        万が一、保険金が認定されなかった場合、お客様の金銭的負担は1円もありません。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 px-6 bg-white text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-navy mb-12">
-                ご自身の申請を「完璧な状態」へ導く4ステップ
-            </h2>
-            <div class="space-y-6 text-left">
-                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg">
-                    <div class="md:w-1/4 text-center mb-4 md:mb-0">
-                        <span class="bg-navy text-white font-bold py-2 px-6 rounded-full inline-block">STEP 1</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-lg font-bold mb-2">Web仮審査（無料）</h3>
-                        <p class="text-gray-600">スマホから、ご自宅にある家財の種類と起きた事象を選択してください。独自のシステムが「想定損害率」と「予測受給額」を即座に算出します。</p>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg">
-                    <div class="md:w-1/4 text-center mb-4 md:mb-0">
-                        <span class="bg-navy text-white font-bold py-2 px-6 rounded-full inline-block">STEP 2</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-lg font-bold mb-2">本審査のお申し込み（電子契約）</h3>
-                        <p class="text-gray-600">予測金額にご納得いただけましたら、本契約へお進みください。万が一の法務リスクや回収の取り決めを明確にした、透明性の高い契約書をご用意しております。</p>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg">
-                    <div class="md:w-1/4 text-center mb-4 md:mb-0">
-                        <span class="bg-navy text-white font-bold py-2 px-6 rounded-full inline-block">STEP 3</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-lg font-bold mb-2">事実の抽出（写真・状況の提出）</h3>
-                        <p class="text-gray-600">専用のガイドに沿って、スマホで写真や記憶をお送りください。すでに片付けてしまった場合でも、代替となる状況証拠の揃え方をプロが指導します。</p>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg border-2 border-navy">
-                    <div class="md:w-1/4 text-center mb-4 md:mb-0">
-                        <span class="bg-navy text-white font-bold py-2 px-6 rounded-full inline-block">STEP 4</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-lg font-bold mb-2">報告書の完成・ご自身で申請</h3>
-                        <p class="text-gray-600">お送りいただいた情報を、HISAIDOが「約款に沿った事実整理メモ」として構築し、お渡しします。あなたはそのメモを見ながら、ご自身の言葉で安心して調査員へ事実を伝えることができます。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 px-6 bg-navy text-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">よくあるご質問</h2>
-            <div class="space-y-6">
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-yellow-400">Q. すでに片付けてしまい、壊れたものも捨ててしまいました。</h3>
-                    <p class="text-gray-300">A. 問題ありません。二次被害を防ぐための片付けや廃棄は、居住者として正しい判断です。</p>
-                    <p class="text-gray-300 mt-2">HISAIDOのコンサルティングにより、「どこに何があり、どうなったか」という記憶を論理的に整理し、調査員が納得できる状況説明の構築をサポートします。</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-yellow-400">Q. 調査員に「専門業者を入れているのか」と警戒されませんか？</h3>
-                    <p class="text-gray-300">A. ご安心ください。HISAIDOがお渡しする報告書は、調査員に提出するものではなく、お客様が事実を正確に伝えるための「ご自身の備忘録（メモ）」として作成します。</p>
-                    <p class="text-gray-300 mt-2">あくまで「自分で事実を整理した」というスタンスで臨んでいただくため、無用なトラブルや警戒を生むことはありません。</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-yellow-400">Q. 悪質な申請代行業者との違いは何ですか？</h3>
-                    <p class="text-gray-300">A. 「事実のみを扱う点」と「交渉を行わない点」です。私たちは無い傷をあると言い張ったり、保険会社と直接交渉したりする違法行為は絶対に行いません。</p>
-                    <p class="text-gray-300 mt-2">お客様の正当な権利を、約款というルールに則って守るコンサルティングファームです。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-6 bg-gray-100 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-2xl md:text-4xl font-bold text-navy mb-8">
-                「あの時、ちゃんと調べておけばよかった」と<br class="hidden md:block">後悔する前に。
-            </h2>
-            <p class="text-lg text-gray-600 mb-4">
-                地震保険の請求期限は原則3年ですが、時間が経つほど事実の証明は困難になります。
-            </p>
-            <p class="text-lg text-gray-600 mb-10">
-                あなたの家に、いくらの「可能性」が眠っているか。まずは無料で、その真実を可視化してみませんか？
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/viewform" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white text-xl font-bold py-5 px-8 md:px-12 rounded-full shadow-2xl transition duration-300 transform hover:scale-105">
-                【無料】今すぐWeb仮審査で予測金額をチェックする
+            <p class="text-lg md:text-xl text-gray-600 mb-12">地震保険の請求期限は原則3年。時間が経つほど事実の証明は困難になります。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/viewform" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white text-xl md:text-3xl font-bold py-6 px-12 md:px-24 rounded-full shadow-2xl transition duration-300 transform hover:scale-105">
+                【無料】Web仮審査へ進む
             </a>
-            <p class="mt-8 text-sm text-gray-500">※水増しや虚偽報告を助長するものではありません。最終的な支払い判断は保険会社が行います。</p>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center text-sm">
         <p>&copy; 2026 HISAIDO All Rights Reserved.</p>
     </footer>
 
