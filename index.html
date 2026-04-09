@@ -17,10 +17,16 @@
             }
         }
     </script>
-    <style>
+   <style>
         body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; }
         .fv-bg { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000') center/cover; }
-        p { line-height: 1.8; }
+        
+        /* ▼ ここから下の3行を追加・修正 ▼ */
+        p { 
+            line-height: 1.8; 
+            text-align: justify; /* 文章の右端を綺麗に揃える */
+            font-feature-settings: "palt"; /* 文字の隙間を美しく調整する */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
