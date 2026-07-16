@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>無料・家財状況チェック | HISAIDO</title>
+    <meta name="description" content="地震後の家財の状態変化を3分で確認できるHISAIDOの無料チェックです。正式な損害認定や支払額の算定を行うものではありません。">
+    <style>
+        :root {
+            color-scheme: light;
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --gold: #b45309;
+            --red: #dc2626;
+            --red-dark: #b91c1c;
+            --border: #d7dee8;
+            --muted: #526071;
+            --surface: #ffffff;
+            --background: #f3f6fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: #1f2937;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .site-header {
+            background: var(--navy);
+            color: #fff;
+            padding: 18px 20px;
+        }
+
+        .site-header__inner {
+            width: min(880px, 100%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #dbe5f1;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        main {
+            width: min(880px, calc(100% - 28px));
+            margin: 28px auto 56px;
+        }
+
+        .intro,
+        .question-card,
+        .notice-card,
+        .complete-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px #0f172a0f;
+        }
+
+        .intro {
+            padding: 30px;
+            border-top: 7px solid var(--navy);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            color: var(--navy);
+            font-size: clamp(27px, 5vw, 40px);
+            line-height: 1.35;
+        }
+
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .intro-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 999px;
+            color: #9a3412;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 5px 12px;
+        }
+
+        .notice-card {
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+        }
+
+        .notice-card p {
+            margin: 0;
+            color: #465365;
+            font-size: 14px;
+        }
+
+        .question-card {
+            padding: 26px 28px;
+            margin-bottom: 16px;
+        }
+
+        fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        legend,
+        .field-label {
+            display: block;
+            width: 100%;
+            margin-bottom: 14px;
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.5;
+        }
+
+        .required {
+            color: var(--red);
+            font-size: 13px;
+            margin-left: 8px;
+        }
+
+        .optional {
+            color: #64748b;
+            font-size: 13px;
+            margin-left: 8px;
+        }
+
+        .choice-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .choice {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #fbfdff;
+            cursor: pointer;
+        }
+
+        .choice:hover {
+            border-color: #94a3b8;
+            background: #f8fafc;
+        }
+
+        .choice input {
+            width: 19px;
+            height: 19px;
+            margin: 3px 0 0;
+            accent-color: var(--navy);
+            flex: 0 0 auto;
+        }
+
+        .choice span {
+            overflow-wrap: anywhere;
+        }
+
+        .field-help {
+            margin: -4px 0 14px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            min-height: 50px;
+            border: 1px solid #aeb9c8;
+            border-radius: 10px;
+            padding: 11px 13px;
+            background: #fff;
+            color: #111827;
+            font: inherit;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: var(--navy);
+            outline: 3px solid #0f172a24;
+        }
+
+        .submit-area {
+            padding: 12px 0 0;
+            text-align: center;
+        }
+
+        .submit-button {
+            width: min(100%, 560px);
+            min-height: 62px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--red);
+            color: #fff;
+            cursor: pointer;
+            font-size: clamp(18px, 4vw, 23px);
+            font-weight: 800;
+            box-shadow: 0 12px 24px rgba(220, 38, 38, 0.22);
+        }
+
+        .submit-button:hover {
+            background: var(--red-dark);
+        }
+
+        .submit-button:disabled {
+            cursor: wait;
+            opacity: 0.68;
+        }
+
+        .submit-note {
+            margin: 13px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .status {
+            min-height: 28px;
+            margin-top: 16px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .complete-card {
+            display: none;
+            padding: 38px 30px;
+            text-align: center;
+            border-top: 7px solid #15803d;
+        }
+
+        .complete-card h2 {
+            margin: 0 0 14px;
+            color: #166534;
+            font-size: 28px;
+        }
+
+        .complete-card p {
+            margin: 0 0 20px;
+            color: var(--muted);
+        }
+
+        .return-button {
+            display: inline-block;
+            border-radius: 999px;
+            background: var(--navy);
+            color: #fff;
+            font-weight: 700;
+            padding: 13px 24px;
+            text-decoration: none;
+        }
+
+        .submission-frame {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            border: 0;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            overflow: hidden;
+        }
+
+        footer {
+            padding: 26px 20px;
+            background: var(--navy);
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .site-header__inner {
+                align-items: flex-start;
+            }
+
+            main {
+                margin-top: 18px;
+            }
+
+            .intro,
+            .question-card,
+            .notice-card,
+            .complete-card {
+                border-radius: 14px;
+            }
+
+            .intro,
+            .question-card {
+                padding: 22px 18px;
+            }
+
+            .notice-card {
+                padding: 17px 18px;
+            }
+
+            legend,
+            .field-label {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="./">HISAIDO</a>
+            <a class="back-link" href="./">← サービス説明へ戻る</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>無料・家財状況チェック</h1>
+            <p class="lead">地震後、ご自宅の家財に確認した方がよい状態変化があるかを、約3分で振り返るための簡易チェックです。</p>
+            <div class="intro-badges" role="group" aria-label="無料チェックの特徴">
+                <span class="badge">入力約3分</span>
+                <span class="badge">無料</span>
+                <span class="badge">送信だけでは契約になりません</span>
+            </div>
+        </section>
+
+        <aside class="notice-card">
+            <p>このチェックは、保険会社による正式な審査・損害認定ではありません。認定区分や支払額を算出・保証するものではなく、最終判断は保険会社が行います。</p>
+        </aside>
+
+        <form id="situation-check" action="https://docs.google.com/forms/d/e/1FAIpQLSf1Oeelbc9m_8LdgkGP0Xts9exnd4ce-0H0WCRvE17AbBa5mA/formResponse" method="POST" target="submission-frame">
+            <section class="question-card">
+                <fieldset>
+                    <legend>1. 加入している保険会社を教えてください<span class="required">必須</span></legend>
+                    <div class="choice-list">
+                        <label class="choice"><input type="radio" name="entry.878731713" value="ソニー損保（※地震上乗せ特約の可能性大）" required><span>ソニー損保</span></label>
+                        <label class="choice"><input type="radio" name="entry.878731713" value="東京海上日動（※地震上乗せ特約の可能性大）"><span>東京海上日動</span></label>
+                        <label class="choice"><input type="radio" name="entry.878731713" value="損保ジャパン / 三井住友海上 / あいおいニッセイ同和"><span>損保ジャパン／三井住友海上／あいおいニッセイ同和</span></label>
+                        <label class="choice"><input type="radio" name="entry.878731713" value="共済系（県民共済、全労済など）"><span>共済系（県民共済・こくみん共済 coopなど）</span></label>
+                        <label class="choice"><input type="radio" name="entry.878731713" value="その他 / わからない"><span>その他／わからない</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="question-card">
+                <fieldset data-exclusive-group>
+                    <legend>2. 地震発生時、家電・家具の転倒、移動、ずれはありましたか？<span class="optional">複数選択可</span></legend>
+                    <div class="choice-list">
+                        <label class="choice"><input type="checkbox" name="entry.116182507" value="テレビや電子レンジなどの家電がズレた、または倒れた"><span>テレビや電子レンジなどの家電がずれた、または倒れた</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.116182507" value="冷蔵庫や洗濯機など、大型家電の位置が移動した"><span>冷蔵庫や洗濯機など、大型家電の位置が移動した</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.116182507" value="家具（本棚、食器棚、タンスなど）がズレた、または倒れた"><span>本棚・食器棚・タンスなどの家具がずれた、または倒れた</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.116182507" value="特に当てはまるものはない" data-none-option><span>特に当てはまるものはない</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="question-card">
+                <fieldset data-exclusive-group>
+                    <legend>3. 地震発生時、家財の落下や散乱はありましたか？<span class="optional">複数選択可</span></legend>
+                    <div class="choice-list">
+                        <label class="choice"><input type="checkbox" name="entry.155745233" value="食器棚からお皿やグラスが落ちた（割れていなくても可）"><span>食器棚から皿やグラスが落ちた</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.155745233" value="クローゼットから服やカバンが落ちて散乱した"><span>クローゼットから服や鞄が落ちて散乱した</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.155745233" value="本棚から本や小物が落ちた"><span>本棚から本や小物が落ちた</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.155745233" value="特に当てはまるものはない" data-none-option><span>特に当てはまるものはない</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="question-card">
+                <fieldset data-exclusive-group>
+                    <legend>4. その他、次のような状態変化はありますか？<span class="optional">複数選択可</span></legend>
+                    <div class="choice-list">
+                        <label class="choice"><input type="checkbox" name="entry.1424567339" value="芳香剤や調味料などがこぼれて、シミや汚れ（汚損）ができた"><span>液体などがこぼれ、染みや汚れができた</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.1424567339" value="地震後、扉や引き出しが開きにくくなった、または勝手に開くようになった"><span>地震後、扉や引き出しが開きにくくなった、または勝手に開くようになった</span></label>
+                        <label class="choice"><input type="checkbox" name="entry.1424567339" value="特に当てはまるものはない" data-none-option><span>特に当てはまるものはない</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="question-card">
+                <label class="field-label" for="household">5. ご家族の人数と、おおよその間取り<span class="optional">任意</span></label>
+                <p class="field-help">例：4人家族、3LDK</p>
+                <input id="household" type="text" name="entry.1432722898" autocomplete="off" maxlength="100">
+            </section>
+
+            <section class="question-card">
+                <label class="field-label" for="email">6. 連絡先メールアドレス<span class="required">必須</span></label>
+                <p class="field-help">入力内容の確認と、必要なご案内のために使用します。</p>
+                <input id="email" type="email" name="entry.2066966481" autocomplete="email" required maxlength="254">
+            </section>
+
+            <section class="question-card">
+                <fieldset>
+                    <legend>7. 被災時の震度を教えてください<span class="required">必須</span></legend>
+                    <div class="choice-list">
+                        <label class="choice"><input type="radio" name="entry.1359224749" value="震度5弱以上" required><span>震度5弱以上</span></label>
+                        <label class="choice"><input type="radio" name="entry.1359224749" value="震度4"><span>震度4</span></label>
+                        <label class="choice"><input type="radio" name="entry.1359224749" value="震度3以下・不明"><span>震度3以下／不明</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="question-card">
+                <fieldset>
+                    <legend>8. 個人情報の取扱い<span class="required">必須</span></legend>
+                    <p class="field-help">入力情報を、無料チェックの確認、結果の連絡および必要なサポート案内の目的で利用することに同意してください。</p>
+                    <label class="choice"><input type="checkbox" name="entry.55240768" value="同意する" required><span>個人情報の取扱いに同意する</span></label>
+                </fieldset>
+            </section>
+
+            <section class="question-card">
+                <fieldset>
+                    <legend>9. 反社会的勢力の排除<span class="required">必須</span></legend>
+                    <p class="field-help">現在および将来にわたり、暴力団等の反社会的勢力に該当せず、不適切な関係を有しないことを確認してください。</p>
+                    <label class="choice"><input type="checkbox" name="entry.31795798" value="確約する" required><span>上記を確認し、確約する</span></label>
+                </fieldset>
+            </section>
+
+            <input id="google-email" type="hidden" name="emailAddress" value="">
+            <input type="hidden" name="fvv" value="1">
+            <input id="partial-response" type="hidden" name="partialResponse" value="">
+            <input type="hidden" name="pageHistory" value="0">
+            <input id="form-seed" type="hidden" name="fbzx" value="">
+            <input type="hidden" name="submissionTimestamp" value="-1">
+
+            <div class="submit-area">
+                <button id="submit-button" class="submit-button" type="submit">無料チェックを送信する</button>
+                <p class="submit-note">送信だけで有料契約が成立することはなく、料金も発生しません。</p>
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+
+        <section id="complete-card" class="complete-card" aria-live="polite">
+            <h2>送信を受け付けました</h2>
+            <p>入力内容を確認のうえ、必要に応じてHISAIDOからご連絡します。</p>
+            <a class="return-button" href="./">HISAIDOのページへ戻る</a>
+        </section>
+
+        <iframe id="submission-frame" class="submission-frame" name="submission-frame" title="送信処理用"></iframe>
+    </main>
+
+    <footer>
+        <p>HISAIDO｜地震保険（家財）の事実整理・申請準備支援</p>
+        <p>&copy; 2026 HISAIDO All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('situation-check');
+        const email = document.getElementById('email');
+        const googleEmail = document.getElementById('google-email');
+        const seed = document.getElementById('form-seed');
+        const partialResponse = document.getElementById('partial-response');
+        const submitButton = document.getElementById('submit-button');
+        const status = document.getElementById('status');
+        const completeCard = document.getElementById('complete-card');
+        const submissionFrame = document.getElementById('submission-frame');
+        let submitted = false;
+        let completed = false;
+
+        function createSeed() {
+            return String(Math.floor(Math.random() * 9000000000000000000) + 1000000000000000000);
+        }
+
+        function showComplete() {
+            if (!submitted || completed) return;
+            completed = true;
+            form.style.display = 'none';
+            completeCard.style.display = 'block';
+            completeCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.querySelectorAll('[data-exclusive-group]').forEach((group) => {
+            const boxes = Array.from(group.querySelectorAll('input[type="checkbox"]'));
+            const none = group.querySelector('[data-none-option]');
+
+            boxes.forEach((box) => {
+                box.addEventListener('change', () => {
+                    if (box === none && box.checked) {
+                        boxes.forEach((other) => {
+                            if (other !== none) other.checked = false;
+                        });
+                    } else if (box !== none && box.checked && none) {
+                        none.checked = false;
+                    }
+                });
+            });
+        });
+
+        submissionFrame.addEventListener('load', showComplete);
+
+        form.addEventListener('submit', () => {
+            const currentSeed = createSeed();
+            googleEmail.value = email.value.trim();
+            seed.value = currentSeed;
+            partialResponse.value = `[null,null,"${currentSeed}"]`;
+            submitted = true;
+            submitButton.disabled = true;
+            status.textContent = '送信しています。画面を閉じずにお待ちください。';
+
+            window.setTimeout(showComplete, 2500);
+        });
+    </script>
+</body>
+</html>
