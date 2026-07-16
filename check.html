@@ -304,6 +304,35 @@
             font-size: 13px;
         }
 
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            margin: 0 0 12px;
+        }
+
+        .footer-links a,
+        .policy-link {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer-links a {
+            padding: 6px 4px;
+        }
+
+        .policy-link {
+            color: #1d4ed8;
+            font-weight: 700;
+        }
+
+        .footer-links a:focus-visible,
+        .policy-link:focus-visible {
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+        }
+
         @media (max-width: 600px) {
             .site-header__inner {
                 align-items: flex-start;
@@ -434,8 +463,8 @@
             <section class="question-card">
                 <fieldset>
                     <legend>8. 個人情報の取扱い<span class="required">必須</span></legend>
-                    <p class="field-help">入力情報を、無料チェックの確認、結果の連絡および必要なサポート案内の目的で利用することに同意してください。</p>
-                    <label class="choice"><input type="checkbox" name="entry.55240768" value="同意する" required><span>個人情報の取扱いに同意する</span></label>
+                    <p class="field-help"><a class="policy-link" href="./privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー（新しいタブで開きます）</a>をご確認ください。入力情報は、無料チェックへの対応、結果の連絡および希望されたサポートの提供に利用し、営業広告の配信には利用しません。</p>
+                    <label class="choice"><input type="checkbox" name="entry.55240768" value="同意する" required><span>プライバシーポリシーを確認し、個人情報の取扱いに同意する</span></label>
                 </fieldset>
             </section>
 
@@ -472,6 +501,10 @@
 
     <footer>
         <p>HISAIDO｜地震保険（家財）の事実整理・申請準備支援</p>
+        <nav class="footer-links" aria-label="法務情報">
+            <a href="./legal.html">特定商取引法に基づく表記</a>
+            <a href="./privacy.html">プライバシーポリシー</a>
+        </nav>
         <p>&copy; 2026 HISAIDO All Rights Reserved.</p>
     </footer>
 
