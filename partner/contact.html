@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>法人提携の相談・審査｜HISAIDO</title>
+    <meta name="description" content="HISAIDO地域優先パートナー契約に関する法人相談窓口です。">
+    <style>
+        :root { color-scheme: light; --navy:#10253d; --gold:#c69a52; --ink:#152232; --muted:#5c6977; --line:#d9e1e7; --bg:#f4f3ef; --red:#a63434; }
+        * { box-sizing: border-box; }
+        body { margin:0; background:var(--bg); color:var(--ink); font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif; line-height:1.75; }
+        a { color:inherit; text-underline-offset:4px; }
+        button,input,select,textarea { font:inherit; }
+        :focus-visible { outline:3px solid #efbd5c; outline-offset:3px; }
+        .header { background:var(--navy); color:#fff; padding:18px 20px; }
+        .header-inner { width:min(980px,100%); margin:auto; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+        .brand { font-weight:900; letter-spacing:.12em; text-decoration:none; }
+        .back { color:#d9e4ee; font-size:14px; text-decoration:none; }
+        main { width:min(980px,calc(100% - 28px)); margin:30px auto 64px; }
+        .intro,.form-card,.notice { border:1px solid var(--line); border-radius:20px; background:#fff; box-shadow:0 12px 36px rgba(16,37,61,.08); }
+        .intro { padding:34px; border-top:7px solid var(--gold); }
+        .intro h1 { margin:0; color:var(--navy); font-size:clamp(29px,5vw,45px); line-height:1.35; }
+        .intro p { margin:16px 0 0; color:var(--muted); font-size:17px; }
+        .badges { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+        .badge { border:1px solid #dfc993; border-radius:999px; background:#fffaf0; color:#6d5224; padding:5px 12px; font-size:12px; font-weight:800; }
+        .notice { margin:18px 0; padding:20px 24px; border-left:5px solid var(--gold); box-shadow:none; }
+        .notice strong { color:var(--navy); }
+        .notice p { margin:5px 0; color:var(--muted); font-size:14px; }
+        .form-card { padding:32px; }
+        .section-title { margin:0 0 22px; color:var(--navy); font-size:22px; }
+        .section-title:not(:first-child) { margin-top:38px; padding-top:32px; border-top:1px solid var(--line); }
+        .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+        .field { min-width:0; }
+        .field--wide { grid-column:1/-1; }
+        label,.label { display:block; margin-bottom:7px; color:var(--navy); font-weight:800; }
+        .required { color:var(--red); margin-left:6px; font-size:12px; }
+        .optional { color:#718091; margin-left:6px; font-size:12px; }
+        .help { margin:-2px 0 8px; color:var(--muted); font-size:13px; }
+        input,select,textarea { width:100%; border:1px solid #aebbc7; border-radius:10px; background:#fff; color:#101820; padding:12px 13px; }
+        input,select { min-height:49px; }
+        textarea { min-height:130px; resize:vertical; }
+        input:focus,select:focus,textarea:focus { border-color:var(--navy); outline:3px solid rgba(16,37,61,.12); }
+        .checks { display:grid; gap:11px; }
+        .check { display:flex; gap:11px; align-items:flex-start; border:1px solid var(--line); border-radius:12px; background:#fafcfd; padding:13px 14px; cursor:pointer; }
+        .check input { flex:0 0 auto; width:19px; min-height:auto; height:19px; margin-top:3px; accent-color:var(--navy); }
+        .actions { margin-top:30px; text-align:center; }
+        .submit { width:min(100%,580px); min-height:58px; border:0; border-radius:999px; background:var(--gold); color:#14263a; cursor:pointer; padding:14px 24px; font-size:19px; font-weight:900; box-shadow:0 12px 26px rgba(198,154,82,.23); }
+        .submit:hover { background:#d6a75a; }
+        .submit-note { margin:12px 0 0; color:var(--muted); font-size:12px; }
+        .status { display:none; margin-top:18px; border:1px solid #b9d7ca; border-radius:12px; background:#f1faf6; color:#185f4e; padding:15px; font-weight:700; }
+        .fallback { margin-top:24px; border-top:1px solid var(--line); padding-top:22px; text-align:center; color:var(--muted); font-size:14px; }
+        .fallback a { color:var(--navy); font-weight:800; }
+        footer { background:#081827; color:#c5d1db; padding:30px 20px; text-align:center; font-size:13px; }
+        .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 20px; margin-bottom:10px; }
+        @media (max-width:700px) { .grid{grid-template-columns:1fr}.field--wide{grid-column:auto}.intro,.form-card{padding:24px 18px;border-radius:15px}.header-inner{align-items:flex-start}.back{max-width:48%;text-align:right}.section-title:not(:first-child){margin-top:30px;padding-top:26px} }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a class="brand" href="./">HISAIDO</a>
+            <a class="back" href="./">← 法人提携の説明へ戻る</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>法人提携の相談・地域適合性の確認</h1>
+            <p>法人情報、希望地域、顧客接点、運用体制を確認するための相談窓口です。入力内容をメールにまとめ、ご利用のメールソフトからHISAIDOへ送信できます。</p>
+            <div class="badges"><span class="badge">法人限定</span><span class="badge">相談無料</span><span class="badge">送信だけでは契約になりません</span></div>
+        </section>
+
+        <aside class="notice">
+            <strong>相談前にご確認ください</strong>
+            <p>本相談は、投資・出資・融資または個人向けサービスの申込みではありません。相談だけで契約、支払い、エリア確保は発生せず、審査通過や収益も保証されません。</p>
+            <p>顧客名簿、顧客氏名、保険証券、被害情報等は入力・送信しないでください。</p>
+        </aside>
+
+        <form id="consultation-form" class="form-card">
+            <h2 class="section-title">法人・担当者情報</h2>
+            <div class="grid">
+                <div class="field"><label for="company">法人正式名称<span class="required">必須</span></label><input id="company" name="company" type="text" autocomplete="organization" required maxlength="120"></div>
+                <div class="field"><label for="corp-number">法人番号（13桁）<span class="required">必須</span></label><input id="corp-number" name="corpNumber" type="text" inputmode="numeric" pattern="[0-9]{13}" maxlength="13" required></div>
+                <div class="field"><label for="representative">代表者名<span class="required">必須</span></label><input id="representative" name="representative" type="text" required maxlength="80"></div>
+                <div class="field"><label for="contact-name">担当者名・役職<span class="required">必須</span></label><input id="contact-name" name="contactName" type="text" autocomplete="name" required maxlength="100"></div>
+                <div class="field"><label for="email">メールアドレス<span class="required">必須</span></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+                <div class="field"><label for="phone">電話番号<span class="required">必須</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="30"></div>
+                <div class="field field--wide"><label for="address">本店所在地<span class="required">必須</span></label><input id="address" name="address" type="text" autocomplete="street-address" required maxlength="180"></div>
+                <div class="field"><label for="website">会社Webサイト<span class="required">必須</span></label><input id="website" name="website" type="url" placeholder="https://" required maxlength="250"></div>
+                <div class="field"><label for="business-years">営業年数<span class="required">必須</span></label><select id="business-years" name="businessYears" required><option value="">選択してください</option><option>1年未満</option><option>1年以上3年未満</option><option>3年以上5年未満</option><option>5年以上10年未満</option><option>10年以上</option></select></div>
+                <div class="field field--wide"><label for="business">主な事業内容<span class="required">必須</span></label><textarea id="business" name="business" required maxlength="700"></textarea></div>
+            </div>
+
+            <h2 class="section-title">希望地域と顧客接点</h2>
+            <div class="grid">
+                <div class="field"><label for="area1">第1希望地域<span class="required">必須</span></label><input id="area1" name="area1" type="text" placeholder="例：○○県○○市" required maxlength="100"><p class="help">市区町村等、実際に運用できる範囲をご記入ください。</p></div>
+                <div class="field"><label for="area2">第2希望地域<span class="optional">任意</span></label><input id="area2" name="area2" type="text" maxlength="100"></div>
+                <div class="field field--wide"><label for="area-record">希望地域内の拠点・事業実績<span class="required">必須</span></label><textarea id="area-record" name="areaRecord" required maxlength="700"></textarea></div>
+                <div class="field"><label for="customer-scale">適法に案内できる既存顧客数<span class="required">必須</span></label><select id="customer-scale" name="customerScale" required><option value="">選択してください</option><option>100未満</option><option>100～499</option><option>500～999</option><option>1,000～4,999</option><option>5,000以上</option></select></div>
+                <div class="field"><label for="relationship">顧客との関係<span class="required">必須</span></label><input id="relationship" name="relationship" type="text" placeholder="例：既存顧客、会員、管理物件所有者" required maxlength="160"></div>
+                <div class="field field--wide"><label for="channels">想定する案内方法<span class="required">必須</span></label><input id="channels" name="channels" type="text" placeholder="例：店頭、メール、LINE、郵送" required maxlength="250"></div>
+                <div class="field"><label for="meeting">面談希望時期<span class="required">必須</span></label><select id="meeting" name="meeting" required><option value="">選択してください</option><option>できるだけ早く</option><option>1か月以内</option><option>1～3か月以内</option><option>時期未定・まず説明を聞きたい</option></select></div>
+                <div class="field field--wide"><label for="reason">提携を希望する理由・質問<span class="required">必須</span></label><textarea id="reason" name="reason" required maxlength="1200"></textarea></div>
+            </div>
+
+            <h2 class="section-title">確認事項</h2>
+            <div class="checks">
+                <label class="check"><input type="checkbox" name="confirmFee" required><span>初期導入費は1,000万円（税別）で、契約時500万円・実装環境の検収合格後500万円を支払う条件であることを確認しました。</span></label>
+                <label class="check"><input type="checkbox" name="confirmMaterials" required><span>顧客への案内ではHISAIDOが承認した資料のみを使用し、無断で内容を変更しないことを確認しました。</span></label>
+                <label class="check"><input type="checkbox" name="confirmScope" required><span>パートナー企業は保険判断、損害認定、保険会社との交渉・代理、法律判断または結果保証を行わないことを確認しました。</span></label>
+                <label class="check"><input type="checkbox" name="confirmNature" required><span>本相談は投資・出資・融資の申込みではなく、売上、報酬または初期導入費の回収が保証されないことを確認しました。</span></label>
+                <label class="check"><input type="checkbox" name="confirmAntisocial" required><span>当社および役員等が反社会的勢力に該当せず、不適切な関係を有しないことを確認します。</span></label>
+                <label class="check"><input type="checkbox" name="confirmPrivacy" required><span><a href="./privacy.html" target="_blank" rel="noopener noreferrer">法人向けプライバシーポリシー</a>を確認し、相談情報の取扱いに同意します。</span></label>
+            </div>
+
+            <div class="actions">
+                <button class="submit" type="submit">相談内容をメールで送信する</button>
+                <p class="submit-note">押すと、ご利用のメールソフトが起動します。送信先は hisaido@flh.works です。</p>
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="fallback">メールソフトが起動しない場合：<a href="mailto:hisaido@flh.works?subject=HISAIDO法人提携の相談">hisaido@flh.works</a> へ直接ご連絡ください。</div>
+        </form>
+    </main>
+
+    <footer>
+        <nav class="footer-links"><a href="./">法人提携の説明</a><a href="./terms.html">法人提携条件</a><a href="./privacy.html">法人向けプライバシーポリシー</a></nav>
+        <p>運営・契約主体：株式会社F.L.H｜&copy; 2026 HISAIDO / F.L.H.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('consultation-form');
+        const status = document.getElementById('status');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (!form.reportValidity()) return;
+            const data = new FormData(form);
+            const lines = [
+                'HISAIDO 法人提携相談', '',
+                '【法人情報】',
+                `法人正式名称：${data.get('company')}`,
+                `法人番号：${data.get('corpNumber')}`,
+                `代表者名：${data.get('representative')}`,
+                `担当者名・役職：${data.get('contactName')}`,
+                `メール：${data.get('email')}`,
+                `電話番号：${data.get('phone')}`,
+                `本店所在地：${data.get('address')}`,
+                `Webサイト：${data.get('website')}`,
+                `営業年数：${data.get('businessYears')}`,
+                `主な事業内容：${data.get('business')}`, '',
+                '【希望地域・顧客接点】',
+                `第1希望地域：${data.get('area1')}`,
+                `第2希望地域：${data.get('area2') || 'なし'}`,
+                `希望地域内の拠点・実績：${data.get('areaRecord')}`,
+                `既存顧客数：${data.get('customerScale')}`,
+                `顧客との関係：${data.get('relationship')}`,
+                `想定する案内方法：${data.get('channels')}`,
+                `面談希望時期：${data.get('meeting')}`,
+                `提携希望理由・質問：${data.get('reason')}`, '',
+                '【確認事項】',
+                '初期導入費・支払条件：確認済み',
+                '承認済み資料のみ使用：確認済み',
+                '保険判断・交渉・結果保証を行わない：確認済み',
+                '投資等ではなく成果非保証：確認済み',
+                '反社会的勢力排除：確認済み',
+                'プライバシーポリシー：同意済み'
+            ];
+            const subject = encodeURIComponent(`HISAIDO法人提携の相談｜${data.get('company')}`);
+            const body = encodeURIComponent(lines.join('\n'));
+            status.style.display = 'block';
+            status.textContent = 'メールソフトを開いています。内容を確認し、メール側の送信ボタンを押してください。';
+            window.location.href = `mailto:hisaido@flh.works?subject=${subject}&body=${body}`;
+        });
+    </script>
+</body>
+</html>
