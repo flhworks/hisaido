@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISAIDO地域優先パートナー契約｜法人向け地域提携プログラム</title>
+    <meta name="description" content="既存顧客や店舗・拠点を持つ法人向けの地域提携プログラム。承認済みの案内導線から、HISAIDOの家財状況確認支援へつなぎます。法人審査・地域適合性の確認からご相談ください。">
+    <link rel="canonical" href="https://flhworks.github.io/hisaido/partner/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HISAIDO地域優先パートナー契約">
+    <meta property="og:description" content="法人限定・審査制。地域のお客様へ、地震後の家財を確認する選択肢を届ける法人提携プログラムです。">
+    <meta property="og:url" content="https://flhworks.github.io/hisaido/partner/">
+    <meta name="twitter:card" content="summary">
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #0b1625;
+            --navy: #10253d;
+            --navy-2: #173b5e;
+            --navy-3: #23557e;
+            --gold: #c69a52;
+            --gold-light: #f2e5c9;
+            --cream: #f5f3ee;
+            --paper: #ffffff;
+            --line: #dce3e8;
+            --muted: #566575;
+            --green: #176b57;
+            --red: #a63a3a;
+            --shadow: 0 18px 55px rgba(9, 29, 48, .12);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; }
+        button, input, select, textarea { font: inherit; }
+        img { max-width: 100%; }
+        :focus-visible { outline: 3px solid #f1bc55; outline-offset: 4px; }
+
+        .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+        .narrow { width: min(900px, calc(100% - 40px)); margin: 0 auto; }
+        .section { padding: 96px 0; }
+        .section--soft { background: var(--cream); }
+        .section--navy { background: var(--navy); color: #fff; }
+        .eyebrow {
+            margin: 0 0 14px;
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        .section-title {
+            margin: 0;
+            color: var(--navy);
+            font-size: clamp(30px, 4.8vw, 50px);
+            line-height: 1.3;
+            letter-spacing: -.025em;
+        }
+        .section--navy .section-title { color: #fff; }
+        .section-lead {
+            max-width: 820px;
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: clamp(17px, 2.2vw, 20px);
+        }
+        .section--navy .section-lead { color: #cfdbe7; }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            border-bottom: 1px solid rgba(255,255,255,.13);
+            background: rgba(10, 28, 46, .95);
+            color: #fff;
+            backdrop-filter: blur(14px);
+        }
+        .site-header__inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .brand { text-decoration: none; line-height: 1.15; }
+        .brand strong { display: block; font-size: 20px; letter-spacing: .12em; }
+        .brand span { display: block; margin-top: 5px; color: #b9c9d8; font-size: 10px; letter-spacing: .16em; }
+        .nav { display: flex; align-items: center; gap: 22px; }
+        .nav a { color: #d8e2ec; font-size: 14px; font-weight: 700; text-decoration: none; }
+        .nav a:hover { color: #fff; }
+        .nav .nav-cta {
+            border: 1px solid #deb76d;
+            border-radius: 999px;
+            background: var(--gold);
+            color: #16263a;
+            padding: 10px 18px;
+        }
+        .menu-button {
+            display: none;
+            width: 46px;
+            height: 42px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 10px;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 78% 15%, rgba(198,154,82,.25), transparent 24%),
+                radial-gradient(circle at 95% 85%, rgba(44,103,150,.32), transparent 29%),
+                linear-gradient(135deg, #0b1c30 0%, #102b47 55%, #10243b 100%);
+            color: #fff;
+            padding: 108px 0 98px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .18;
+            background-image: linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px);
+            background-size: 62px 62px;
+            mask-image: linear-gradient(to right, transparent 0%, #000 45%, #000 100%);
+        }
+        .hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
+            align-items: center;
+            gap: 64px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(231, 198, 134, .45);
+            border-radius: 999px;
+            background: rgba(255,255,255,.06);
+            color: #f1d99e;
+            padding: 7px 13px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+        }
+        .hero-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+        .hero h1 {
+            margin: 0;
+            max-width: 760px;
+            font-size: clamp(38px, 6vw, 70px);
+            line-height: 1.18;
+            letter-spacing: -.045em;
+        }
+        .hero h1 em { color: #efcf8b; font-style: normal; }
+        .hero-copy {
+            max-width: 730px;
+            margin: 30px 0 0;
+            color: #d6e1eb;
+            font-size: clamp(17px, 2vw, 20px);
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
+        .button {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            padding: 13px 24px;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .button:hover { transform: translateY(-2px); }
+        .button--gold { background: var(--gold); color: #12263a; box-shadow: 0 12px 30px rgba(198,154,82,.24); }
+        .button--light { border-color: rgba(255,255,255,.38); background: rgba(255,255,255,.06); color: #fff; }
+        .button--navy { background: var(--navy); color: #fff; box-shadow: 0 12px 28px rgba(16,37,61,.2); }
+        .hero-note { margin: 16px 0 0; color: #aebfce; font-size: 13px; }
+        .hero-card {
+            position: relative;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 28px;
+            background: rgba(255,255,255,.09);
+            padding: 34px;
+            box-shadow: 0 28px 70px rgba(0,0,0,.24);
+            backdrop-filter: blur(14px);
+        }
+        .hero-card h2 { margin: 0 0 22px; font-size: 17px; letter-spacing: .04em; }
+        .term-list { display: grid; gap: 1px; margin: 0; border: 1px solid rgba(255,255,255,.16); border-radius: 18px; overflow: hidden; }
+        .term-row { display: grid; grid-template-columns: 42% 58%; background: rgba(5,20,34,.28); }
+        .term-row dt, .term-row dd { margin: 0; padding: 15px 17px; }
+        .term-row dt { color: #b8c7d4; font-size: 13px; }
+        .term-row dd { border-left: 1px solid rgba(255,255,255,.14); color: #fff; font-weight: 800; }
+        .hero-card__note { margin: 20px 0 0; color: #c8d6e2; font-size: 13px; }
+
+        .proof-strip { border-bottom: 1px solid var(--line); background: #fff; }
+        .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .proof-item { padding: 26px 20px; text-align: center; }
+        .proof-item + .proof-item { border-left: 1px solid var(--line); }
+        .proof-item strong { display: block; color: var(--navy); font-size: 19px; }
+        .proof-item span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 10px 34px rgba(19,49,75,.07);
+        }
+        .card-number { display: flex; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 12px; background: #eef3f6; color: var(--navy); font-weight: 900; }
+        .card h3 { margin: 21px 0 10px; color: var(--navy); font-size: 22px; line-height: 1.45; }
+        .card p { margin: 0; color: var(--muted); }
+
+        .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; margin-top: 50px; }
+        .principle-box { border-radius: 24px; background: var(--navy); color: #fff; padding: 36px; box-shadow: var(--shadow); }
+        .principle-box h3 { margin: 0; font-size: 28px; line-height: 1.35; }
+        .principle-box p { margin: 18px 0 0; color: #cddae5; }
+        .check-list, .cross-list { list-style: none; margin: 0; padding: 0; }
+        .check-list { display: grid; gap: 15px; }
+        .check-list li, .cross-list li { position: relative; padding-left: 34px; }
+        .check-list li::before, .cross-list li::before {
+            position: absolute;
+            left: 0;
+            top: .15em;
+            display: flex;
+            width: 23px;
+            height: 23px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 900;
+        }
+        .check-list li::before { content: "✓"; background: #e8f4ef; color: var(--green); }
+        .cross-list li::before { content: "×"; background: #faecec; color: var(--red); }
+
+        .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 48px; }
+        .flow-step { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 25px 20px; }
+        .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -13px; top: 29px; z-index: 2; color: var(--gold); font-weight: 900; }
+        .flow-step b { color: var(--gold); font-size: 12px; letter-spacing: .08em; }
+        .flow-step strong { display: block; margin-top: 9px; color: var(--navy); font-size: 17px; line-height: 1.45; }
+        .flow-step p { margin: 9px 0 0; color: var(--muted); font-size: 13px; }
+
+        .role-table { margin-top: 46px; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: #fff; }
+        .role-table__head, .role-row { display: grid; grid-template-columns: 1fr 1fr; }
+        .role-table__head div { background: var(--navy); color: #fff; padding: 17px 24px; font-weight: 800; }
+        .role-table__head div + div { border-left: 1px solid rgba(255,255,255,.2); }
+        .role-row > div { padding: 20px 24px; }
+        .role-row > div + div { border-left: 1px solid var(--line); }
+        .role-row + .role-row { border-top: 1px solid var(--line); }
+
+        .package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 46px; counter-reset: package; }
+        .package-item { counter-increment: package; min-height: 160px; border: 1px solid rgba(255,255,255,.15); border-radius: 18px; background: rgba(255,255,255,.06); padding: 24px; }
+        .package-item::before { content: counter(package, decimal-leading-zero); display: block; color: #e4bd72; font-weight: 900; letter-spacing: .1em; }
+        .package-item strong { display: block; margin-top: 12px; font-size: 18px; line-height: 1.45; }
+        .package-item p { margin: 8px 0 0; color: #bfcedb; font-size: 14px; }
+        .confidential-note { margin-top: 24px; border-left: 3px solid var(--gold); padding: 10px 0 10px 18px; color: #cbd7e2; font-size: 14px; }
+
+        .terms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
+        .terms-card { border: 1px solid var(--line); border-top: 5px solid var(--gold); border-radius: 18px; background: #fff; padding: 28px; }
+        .terms-card span { color: var(--muted); font-size: 13px; }
+        .terms-card strong { display: block; margin-top: 8px; color: var(--navy); font-size: 27px; line-height: 1.3; }
+        .terms-card p { margin: 13px 0 0; color: var(--muted); font-size: 14px; }
+
+        .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 42px; }
+        .area-box { border-radius: 22px; padding: 30px; }
+        .area-box--yes { border: 1px solid #bed8ce; background: #f2faf7; }
+        .area-box--no { border: 1px solid #ebcaca; background: #fff7f7; }
+        .area-box h3 { margin: 0 0 20px; color: var(--navy); font-size: 22px; }
+        .area-box ul { display: grid; gap: 13px; }
+        .region-note { margin-top: 26px; border: 1px solid #d5c39c; border-radius: 16px; background: #fffaf0; padding: 20px 24px; color: #674d1f; }
+
+        .formula { margin-top: 44px; border-radius: 24px; background: linear-gradient(135deg, #0f2943, #194b70); color: #fff; padding: 36px; text-align: center; box-shadow: var(--shadow); }
+        .formula span { display: block; color: #bed0df; font-size: 13px; letter-spacing: .06em; }
+        .formula strong { display: block; margin-top: 12px; color: #f0cf8d; font-size: clamp(22px, 4vw, 38px); line-height: 1.4; }
+        .formula p { margin: 17px auto 0; max-width: 780px; color: #d7e2ea; font-size: 14px; }
+
+        .timeline { display: grid; gap: 0; margin-top: 46px; counter-reset: timeline; }
+        .timeline-item { counter-increment: timeline; display: grid; grid-template-columns: 62px 1fr; gap: 20px; position: relative; }
+        .timeline-item::before { content: counter(timeline); display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 900; }
+        .timeline-item:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: var(--line); }
+        .timeline-content { padding: 4px 0 30px; }
+        .timeline-content strong { color: var(--navy); font-size: 19px; }
+        .timeline-content p { margin: 5px 0 0; color: var(--muted); }
+
+        .faq { display: grid; gap: 12px; margin-top: 42px; }
+        .faq details { border: 1px solid var(--line); border-radius: 15px; background: #fff; overflow: hidden; }
+        .faq summary { position: relative; cursor: pointer; list-style: none; padding: 20px 56px 20px 22px; color: var(--navy); font-weight: 800; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: "+"; position: absolute; right: 22px; top: 14px; font-size: 26px; color: var(--gold); }
+        .faq details[open] summary::after { content: "−"; }
+        .faq details[open] summary { border-bottom: 1px solid var(--line); background: #fbfcfd; }
+        .faq p { margin: 0; padding: 18px 22px 22px; color: var(--muted); }
+
+        .cta-panel { border-radius: 30px; background: linear-gradient(135deg, #0b2036, #18496e); color: #fff; padding: 56px; box-shadow: var(--shadow); text-align: center; }
+        .cta-panel h2 { margin: 0; font-size: clamp(29px, 5vw, 48px); line-height: 1.35; }
+        .cta-panel p { max-width: 760px; margin: 22px auto 0; color: #d1dee8; font-size: 18px; }
+        .cta-panel .button { margin-top: 30px; }
+        .cta-panel small { display: block; margin-top: 16px; color: #aebfce; }
+
+        .disclosure { border-top: 1px solid var(--line); background: #f7f8f9; padding: 34px 0; }
+        .disclosure h2 { margin: 0 0 10px; color: var(--navy); font-size: 17px; }
+        .disclosure p { margin: 7px 0; color: #5d6874; font-size: 13px; }
+        .site-footer { background: #081827; color: #c7d2dc; padding: 44px 0; }
+        .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: end; }
+        .footer-brand strong { display: block; color: #fff; font-size: 20px; letter-spacing: .12em; }
+        .footer-brand p { margin: 8px 0 0; font-size: 13px; }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 20px; }
+        .footer-links a { font-size: 13px; text-underline-offset: 4px; }
+        .copyright { margin: 24px 0 0; border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px; color: #8fa2b2; font-size: 12px; }
+
+        @media (max-width: 960px) {
+            .nav a:not(.nav-cta) { display: none; }
+            .hero-grid, .split { grid-template-columns: 1fr; }
+            .hero-card { max-width: 600px; }
+            .cards, .package-grid, .terms-grid { grid-template-columns: repeat(2, 1fr); }
+            .flow { grid-template-columns: repeat(2, 1fr); }
+            .flow-step::after { display: none; }
+        }
+        @media (max-width: 680px) {
+            .container, .narrow { width: min(100% - 28px, 1160px); }
+            .section { padding: 70px 0; }
+            .site-header__inner { min-height: 64px; }
+            .nav { display: none; position: absolute; left: 14px; right: 14px; top: 68px; flex-direction: column; align-items: stretch; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: #0b2035; padding: 15px; box-shadow: var(--shadow); }
+            .nav.is-open { display: flex; }
+            .nav a:not(.nav-cta) { display: block; padding: 9px 10px; }
+            .menu-button { display: inline-flex; align-items: center; justify-content: center; }
+            .hero { padding: 76px 0 70px; }
+            .hero-grid { gap: 38px; }
+            .hero-card { padding: 23px; border-radius: 22px; }
+            .hero-actions { flex-direction: column; }
+            .button { width: 100%; }
+            .proof-grid { grid-template-columns: repeat(2, 1fr); }
+            .proof-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+            .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
+            .cards, .package-grid, .terms-grid, .area-grid, .flow { grid-template-columns: 1fr; }
+            .role-table__head { display: none; }
+            .role-row { grid-template-columns: 1fr; }
+            .role-row > div::before { display: block; margin-bottom: 8px; color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
+            .role-row > div:first-child::before { content: "パートナー企業"; }
+            .role-row > div:last-child::before { content: "HISAIDO"; }
+            .role-row > div + div { border-left: 0; border-top: 1px dashed var(--line); }
+            .cta-panel { padding: 38px 22px; border-radius: 22px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-links { justify-content: flex-start; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="./" aria-label="HISAIDO法人提携ページ">
+                <strong>HISAIDO</strong>
+                <span>CORPORATE PARTNERS</span>
+            </a>
+            <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">☰</button>
+            <nav id="global-nav" class="nav" aria-label="ページ内ナビゲーション">
+                <a href="#program">提携内容</a>
+                <a href="#package">提供内容</a>
+                <a href="#conditions">契約条件</a>
+                <a href="#faq">よくある質問</a>
+                <a class="nav-cta" href="./contact.html">法人提携を相談する</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="hero-badge">法人限定・審査制</div>
+                    <h1>地域のお客様へ、地震後の<br><em>「家財を確認する選択肢」</em>を届ける。</h1>
+                    <p class="hero-copy">HISAIDO地域優先パートナー契約は、既存顧客や店舗・拠点を持つ法人が、保険判断や申請代行を行うことなく、お客様をHISAIDOの家財状況確認支援へつなげる法人提携プログラムです。</p>
+                    <div class="hero-actions">
+                        <a class="button button--gold" href="./contact.html">法人提携の相談・審査へ</a>
+                        <a class="button button--light" href="#conditions">契約条件を確認する</a>
+                    </div>
+                    <p class="hero-note">相談の送信だけで、契約・支払い・エリア確保は発生しません。</p>
+                </div>
+                <aside class="hero-card" aria-label="主な契約条件">
+                    <h2>主な契約条件</h2>
+                    <dl class="term-list">
+                        <div class="term-row"><dt>対象</dt><dd>法人限定・審査制</dd></div>
+                        <div class="term-row"><dt>初期導入費</dt><dd>1,000万円（税別）</dd></div>
+                        <div class="term-row"><dt>初回期間</dt><dd>3年間</dd></div>
+                        <div class="term-row"><dt>紹介業務報酬</dt><dd>対象受領額の25％</dd></div>
+                    </dl>
+                    <p class="hero-card__note">本契約は投資・出資・融資ではありません。売上、紹介件数、保険金、初期導入費の回収を保証するものでもありません。</p>
+                </aside>
+            </div>
+        </section>
+
+        <div class="proof-strip" aria-label="プログラム概要">
+            <div class="container proof-grid">
+                <div class="proof-item"><strong>専用導線</strong><span>URL・QR・パートナーID</span></div>
+                <div class="proof-item"><strong>承認済み資料</strong><span>案内文・POP・FAQ</span></div>
+                <div class="proof-item"><strong>役割の明確化</strong><span>保険判断・交渉は行わない</span></div>
+                <div class="proof-item"><strong>匿名明細</strong><span>顧客の詳細情報は共有しない</span></div>
+            </div>
+        </div>
+
+        <section id="program" class="section">
+            <div class="container">
+                <p class="eyebrow">Why this program</p>
+                <h2 class="section-title">「案内しない」と「説明しすぎる」の間に、<br>適切な導線をつくる。</h2>
+                <p class="section-lead">地震後、建物は確認していても、家財の状態変化まで十分に振り返っていない方がいます。一方、地域企業のスタッフが、補償対象や損害認定を個別に判断することはできません。そこで、企業の役割を承認済み情報の案内に限定し、その後をHISAIDOが直接受け付けます。</p>
+                <div class="cards">
+                    <article class="card"><div class="card-number">01</div><h3>顧客へ確認の選択肢を届ける</h3><p>自社の既存顧客や来店者へ、家財の状態を振り返るきっかけを案内できます。</p></article>
+                    <article class="card"><div class="card-number">02</div><h3>スタッフが保険判断をしない</h3><p>承認済みの案内内容だけを使用し、個別の補償・認定・支払見込みには踏み込みません。</p></article>
+                    <article class="card"><div class="card-number">03</div><h3>紹介経路を記録する</h3><p>専用URL・QR・パートナーIDにより、有効な紹介と報酬計算の基礎を記録します。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--soft">
+            <div class="container">
+                <p class="eyebrow">Customer journey</p>
+                <h2 class="section-title">お客様が利用するまでの流れ</h2>
+                <div class="flow">
+                    <article class="flow-step"><b>STEP 1</b><strong>承認済み案内</strong><p>店頭・メール・LINEなど、合意した方法で案内します。</p></article>
+                    <article class="flow-step"><b>STEP 2</b><strong>お客様が直接登録</strong><p>専用URL・QRから、お客様本人がHISAIDOへ登録します。</p></article>
+                    <article class="flow-step"><b>STEP 3</b><strong>HISAIDOが確認</strong><p>家財状況の確認と、確認できる事実の整理を支援します。</p></article>
+                    <article class="flow-step"><b>STEP 4</b><strong>お客様本人が申告</strong><p>必要に応じて、お客様自身が保険会社へ連絡・申告します。</p></article>
+                    <article class="flow-step"><b>STEP 5</b><strong>保険会社が判断</strong><p>損害認定と保険金支払いは、保険会社が最終判断します。</p></article>
+                </div>
+
+                <div class="split">
+                    <aside class="principle-box">
+                        <h3>顧客情報は、<br>お客様からHISAIDOへ直接。</h3>
+                        <p>パートナー企業が保険証券、被害写真、家財情報等を預かり、HISAIDOへ渡す仕組みではありません。パートナーへは匿名案件IDと、報酬確認に必要な最小限の情報だけを共有します。</p>
+                    </aside>
+                    <div>
+                        <h3 style="margin:0 0 22px;color:var(--navy);font-size:26px;">HISAIDOの業務範囲</h3>
+                        <ul class="check-list">
+                            <li>家財の被災状況を振り返るための確認支援</li>
+                            <li>顧客から提供された事実の整理</li>
+                            <li>申告資料の作成準備支援</li>
+                            <li>サービスの受付、契約、料金管理</li>
+                        </ul>
+                        <h3 style="margin:30px 0 18px;color:var(--navy);font-size:20px;">HISAIDOが行わないこと</h3>
+                        <ul class="cross-list" style="display:grid;gap:13px;">
+                            <li>保険会社との交渉・代理請求・法律判断</li>
+                            <li>損害認定、認定区分または支払額の保証</li>
+                            <li>虚偽、水増し、事実と異なる申告への関与</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="role-table" aria-label="パートナー企業とHISAIDOの役割分担">
+                    <div class="role-table__head"><div>パートナー企業</div><div>HISAIDO</div></div>
+                    <div class="role-row"><div>承認済み案内物の設置・送付</div><div>お客様からの直接受付</div></div>
+                    <div class="role-row"><div>専用URL・QRの案内</div><div>家財状況の確認と事実整理</div></div>
+                    <div class="role-row"><div>スタッフ研修への参加</div><div>申告資料の作成準備支援</div></div>
+                    <div class="role-row"><div>合意した活動状況の報告</div><div>紹介経路・匿名明細・報酬管理</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="package" class="section section--navy">
+            <div class="container">
+                <p class="eyebrow">Implementation package</p>
+                <h2 class="section-title">1,000万円は、地域で適正に運用するための<br>初期実装の対価です。</h2>
+                <p class="section-lead">紹介権を購入する投資金ではありません。株式、持分、配当、元本、預り金、融資または特定の収益を得る権利も付与されません。</p>
+                <div class="package-grid">
+                    <article class="package-item"><strong>導入計画</strong><p>対象地域、顧客接点、店舗・拠点を踏まえた運用設計</p></article>
+                    <article class="package-item"><strong>専用紹介経路</strong><p>パートナーID、紹介URL、QRコードの初期設定</p></article>
+                    <article class="package-item"><strong>帰属・集計環境</strong><p>紹介経路、計上条件、通知、匿名明細の動作確認</p></article>
+                    <article class="package-item"><strong>共同表示用資料</strong><p>LP、POP、チラシ等の承認済み原稿</p></article>
+                    <article class="package-item"><strong>顧客案内文</strong><p>メール、LINE、Web掲載用の承認済み文章</p></article>
+                    <article class="package-item"><strong>スタッフ資料</strong><p>案内スクリプト、FAQ、運用マニュアル</p></article>
+                    <article class="package-item"><strong>初期研修</strong><p>禁止事項、個人情報、顧客対応を含む導入研修</p></article>
+                    <article class="package-item"><strong>検収テスト</strong><p>紹介登録から記録・通知までの接続試験</p></article>
+                    <article class="package-item"><strong>運用中の標準支援</strong><p>承認資料の必要な更新と通常の運用照会</p></article>
+                </div>
+                <p class="confidential-note">HISAIDOの核となる詳細な家財確認項目は営業秘密として管理し、パートナー企業または申込前のお客様へ一式を開示しません。案内業務に必要な範囲の資料のみを提供します。</p>
+            </div>
+        </section>
+
+        <section id="conditions" class="section section--soft">
+            <div class="container">
+                <p class="eyebrow">Contract conditions</p>
+                <h2 class="section-title">契約条件を、申込み前に明確にします。</h2>
+                <div class="terms-grid">
+                    <article class="terms-card"><span>初期導入費</span><strong>1,000万円<br><small style="font-size:.55em;">（税別）</small></strong><p>契約時500万円、初期実装の検収合格後500万円。相談・審査段階では料金は発生しません。</p></article>
+                    <article class="terms-card"><span>初回契約期間</span><strong>3年間</strong><p>以後は1年単位の自動更新。通常の更新料はありません。更新停止の条件は契約書で明示します。</p></article>
+                    <article class="terms-card"><span>紹介業務報酬</span><strong>25％</strong><p>HISAIDOが実際に受領した対象サービス料の税抜額から、返金等を控除した金額を基準に計算します。</p></article>
+                </div>
+
+                <div class="formula">
+                    <span>紹介業務報酬の計算式</span>
+                    <strong>（税抜サービス料の実受領額 − 返金・取消等）× 25％</strong>
+                    <p>お客様が受領した保険金額を基準にしません。HISAIDOがサービス料を受領しない場合、紹介業務報酬は発生しません。売上・紹介件数・報酬額・初期導入費の回収は保証されません。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <p class="eyebrow">Regional priority</p>
+                <h2 class="section-title">「地域優先」は、地域全体の絶対的な独占権ではありません。</h2>
+                <p class="section-lead">契約条件と運用基準を満たしている期間中、HISAIDOは契約書で定めた同一地域に、別の地域優先パートナーを重ねて選任しません。対象地域は契約別紙で住所範囲を確定します。</p>
+                <div class="area-grid">
+                    <article class="area-box area-box--yes"><h3>地域優先に含まれること</h3><ul class="check-list"><li>合意地域に同種の地域優先パートナーを重ねて選任しない</li><li>専用導線からの有効紹介を記録する</li><li>担当地域外に物件を持つ既存顧客も、有効紹介なら25％の対象</li></ul></article>
+                    <article class="area-box area-box--no"><h3>地域優先に含まれないこと</h3><ul class="cross-list"><li>地域内の全顧客・全案件の所有</li><li>HISAIDOへの自然流入・直接相談の自動帰属</li><li>担当地域外への意図的な広告・新規営業</li><li>保険募集、交渉、損害認定を行う権限</li></ul></article>
+                </div>
+                <p class="region-note"><strong>直接運営地域：</strong>宮城県・岩手県・福島県は、現在HISAIDOが直接運営する地域のため、地域優先パートナーの対象外です。北海道その他の広域地域は、商圏と運用体制を確認して個別に地域を区分します。</p>
+            </div>
+        </section>
+
+        <section class="section section--soft">
+            <div class="narrow">
+                <p class="eyebrow">Onboarding</p>
+                <h2 class="section-title">相談から本運用まで</h2>
+                <div class="timeline">
+                    <article class="timeline-item"><div class="timeline-content"><strong>法人提携相談</strong><p>法人情報、希望地域、顧客接点、案内可能な拠点を確認します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>地域・運用体制の初期確認</strong><p>地域の重複、顧客接点、事業適合性、コンプライアンス体制を確認します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>個別説明・必要に応じた秘密保持</strong><p>提供内容、地域条件、役割分担、報酬計算を個別に説明します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>重要事項と契約書の確認</strong><p>費用、返金、期間、解除、地域例外、非保証を契約前に確認します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>契約・第1回支払い</strong><p>契約締結後、初期導入費の50％をお支払いいただき、導入設計を開始します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>専用環境・資料・研修の実装</strong><p>紹介導線、案内物、マニュアル、研修、集計環境を整えます。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>動作確認・検収</strong><p>お客様登録から紹介記録、通知、匿名明細までを試験します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>第2回支払い・本運用開始</strong><p>検収合格後、残額50％をお支払いいただき、本運用を開始します。</p></div></article>
+                </div>
+                <p style="margin:8px 0 0;color:var(--muted);font-size:14px;">先着順や決済順での即時確保ではありません。地域、顧客接点、運用体制、法令順守を確認したうえで判断します。</p>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="narrow">
+                <p class="eyebrow">Frequently asked questions</p>
+                <h2 class="section-title">よくある質問</h2>
+                <div class="faq">
+                    <details><summary>これは投資または出資ですか？</summary><p>いいえ。法人向けの業務提携・初期実装契約です。株式、持分、配当、利息、元本返還または特定収益を受け取る契約ではありません。</p></details>
+                    <details><summary>地域の独占権を取得できますか？</summary><p>絶対的な独占権ではありません。契約条件を満たす期間中、合意地域に別の地域優先パートナーを重ねて選任しない、条件付きの地域優先制度です。</p></details>
+                    <details><summary>25％の紹介業務報酬は必ず受け取れますか？</summary><p>いいえ。正規の紹介案件について、HISAIDOが税抜サービス料を実際に受領した場合に発生します。紹介件数、売上、初期導入費の回収は保証されません。</p></details>
+                    <details><summary>パートナー企業が保険について説明する必要はありますか？</summary><p>個別の保険契約、補償内容、損害認定、支払見込みを判断・説明せず、承認済み案内物からHISAIDOへつないでください。</p></details>
+                    <details><summary>お客様の個人情報をHISAIDOへ渡しますか？</summary><p>原則として渡しません。お客様自身がHISAIDOへ直接登録します。パートナー企業には、個別の保険情報や損害内容ではなく、匿名案件IDと報酬確認に必要な情報だけをお知らせします。</p></details>
+                    <details><summary>担当地域外の既存顧客は対象になりますか？</summary><p>既存顧客が担当地域外に物件を所有している場合でも、正規の専用導線から登録された有効案件は紹介業務報酬の対象です。地域外への意図的な広告や新規営業はできません。</p></details>
+                    <details><summary>更新料はかかりますか？</summary><p>通常の更新料はありません。当初3年間の後、1年単位で自動更新します。地域優先の維持には、研修や承認資料の利用等の運用基準があります。</p></details>
+                    <details><summary>案内物を自社向けに変更できますか？</summary><p>事前承認を受けた範囲で共同表示や必要な調整ができます。誤認を防ぐため、文章や画像を無断で変更することはできません。</p></details>
+                    <details><summary>途中解約や返金はどうなりますか？</summary><p>検収前は、工程別の完了部分、客観的な出来高、事前承認済みの取消不能費用を精算し、未実施分を返金します。検収後は初期導入業務が完了しているため、売上や紹介件数が予想を下回ったことを理由とする返金はありません。詳細は契約前重要事項説明書と契約書で確認します。</p></details>
+                    <details><summary>HISAIDOの利用で保険金支払いは確定しますか？</summary><p>確定しません。損害認定、認定区分および保険金支払いは保険会社が最終判断します。お客様はHISAIDOを利用せず、保険会社へ直接相談・請求することもできます。</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--soft">
+            <div class="container">
+                <div class="cta-panel">
+                    <h2>自社の顧客接点と希望地域が、<br>運用条件に適合するか確認しませんか。</h2>
+                    <p>まずは法人情報、希望地域、既存の顧客接点、案内可能な拠点を確認します。相談・審査の段階で契約や支払いを求めることはありません。</p>
+                    <a class="button button--gold" href="./contact.html">地域適合性の確認を相談する</a>
+                    <small>投資、融資、株式取得または個人向けサービスの申込み窓口ではありません。</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="disclosure" aria-labelledby="disclosure-title">
+        <div class="narrow">
+            <h2 id="disclosure-title">重要事項</h2>
+            <p>本契約は、売上、利益、紹介件数、初期導入費の回収、保険金の支払いまたは特定の成果を保証するものではありません。</p>
+            <p>本提携は、パートナー企業へ保険契約の募集、媒介、代理、損害認定、法律判断または保険会社との交渉権限を付与するものではありません。</p>
+            <p>初回の有料契約・入金は、契約書、契約前重要事項、導入内容および個別地域を双方が書面で確認した後に行います。</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><strong>HISAIDO</strong><p>法人向け地域優先パートナー事業<br>運営・契約主体：株式会社F.L.H</p></div>
+                <nav class="footer-links" aria-label="法務・関連情報">
+                    <a href="./terms.html">法人提携条件</a>
+                    <a href="./privacy.html">法人向けプライバシーポリシー</a>
+                    <a href="mailto:hisaido@flh.works">お問い合わせ</a>
+                    <a href="../">個人向けHISAIDO</a>
+                </nav>
+            </div>
+            <p class="copyright">&copy; 2026 HISAIDO / F.L.H. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.getElementById('global-nav');
+        menuButton.addEventListener('click', () => {
+            const open = nav.classList.toggle('is-open');
+            menuButton.setAttribute('aria-expanded', String(open));
+            menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+        });
+        nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            nav.classList.remove('is-open');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.setAttribute('aria-label', 'メニューを開く');
+        }));
+    </script>
+</body>
+</html>
