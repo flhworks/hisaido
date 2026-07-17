@@ -16,13 +16,13 @@
         <div class="spinner" aria-hidden="true"></div>
         <h1>相談フォームを準備しています</h1>
         <p>自動で画面が変わらない場合は、下のボタンを押してください。</p>
-        <a id="continue" href="https://script.google.com/macros/s/AKfycbwlQUXBFofenTSxIbFNXO2CvheeHWL0nku9upnQ7MdQYv2sEWfwfPx1dVC06QpYb-gYZQ/exec">相談フォームへ進む</a>
+        <a id="continue" href="https://script.google.com/macros/s/AKfycbzEBW7ce90-cMYSeh4O7mcBls6qlF22egzqxLL2ZxpTz1U8FgnaByVB-BURpwTOvZFs1w/exec">相談フォームへ進む</a>
         <noscript><p>続行するにはJavaScriptを有効にするか、上のボタンを押してください。</p></noscript>
     </main>
     <script>
         (() => {
             'use strict';
-            const endpoint = 'https://script.google.com/macros/s/AKfycbwlQUXBFofenTSxIbFNXO2CvheeHWL0nku9upnQ7MdQYv2sEWfwfPx1dVC06QpYb-gYZQ/exec';
+            const endpoint = 'https://script.google.com/macros/s/AKfycbzEBW7ce90-cMYSeh4O7mcBls6qlF22egzqxLL2ZxpTz1U8FgnaByVB-BURpwTOvZFs1w/exec';
             const source = new URL(window.location.href);
             const target = new URL(endpoint);
             const referralCode = String(source.searchParams.get('c') || 'DIRECT').trim().toUpperCase();
@@ -31,9 +31,9 @@
             const versionPattern = /^\d{1,3}\.\d{1,3}$/;
 
             if (referralCode === 'DIRECT' || /^[23456789ABCDEFGHJKLMNPQRSTUVWXYZ]{8}$/.test(referralCode)) {
-                target.searchParams.set('c', referralCode);
+                target.searchParams.set('ref', referralCode);
             } else {
-                target.searchParams.set('c', 'INVALID');
+                target.searchParams.set('ref', 'INVALID');
             }
 
             const campaign = String(source.searchParams.get('campaign') || '').trim().toUpperCase();
