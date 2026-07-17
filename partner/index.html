@@ -31,6 +31,7 @@
 
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        [id] { scroll-margin-top: 92px; }
         body {
             margin: 0;
             background: var(--paper);
@@ -38,6 +39,9 @@
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
+        }
+        @supports (word-break: auto-phrase) {
+            body { word-break: auto-phrase; }
         }
         a { color: inherit; }
         button, input, select, textarea { font: inherit; }
@@ -63,6 +67,7 @@
             font-size: clamp(30px, 4.8vw, 50px);
             line-height: 1.3;
             letter-spacing: -.025em;
+            text-wrap: balance;
         }
         .section--navy .section-title { color: #fff; }
         .section-lead {
@@ -70,7 +75,10 @@
             margin: 24px 0 0;
             color: var(--muted);
             font-size: clamp(17px, 2.2vw, 20px);
+            text-wrap: pretty;
         }
+        .title-line, .hero-title-line { display: block; }
+        .nowrap { white-space: nowrap; }
         .section--navy .section-lead { color: #cfdbe7; }
 
         .site-header {
@@ -135,9 +143,9 @@
         .hero-grid {
             position: relative;
             display: grid;
-            grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
+            grid-template-columns: minmax(0, 1fr) minmax(340px, 390px);
             align-items: center;
-            gap: 64px;
+            gap: 52px;
         }
         .hero-badge {
             display: inline-flex;
@@ -157,9 +165,10 @@
         .hero h1 {
             margin: 0;
             max-width: 760px;
-            font-size: clamp(38px, 6vw, 70px);
+            font-size: clamp(40px, 4.2vw, 52px);
             line-height: 1.18;
             letter-spacing: -.045em;
+            text-wrap: balance;
         }
         .hero h1 em { color: #efcf8b; font-style: normal; }
         .hero-copy {
@@ -167,6 +176,7 @@
             margin: 30px 0 0;
             color: #d6e1eb;
             font-size: clamp(17px, 2vw, 20px);
+            text-wrap: pretty;
         }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
         .button {
@@ -203,7 +213,7 @@
         .term-row dt, .term-row dd { margin: 0; padding: 15px 17px; }
         .term-row dt { color: #b8c7d4; font-size: 13px; }
         .term-row dd { border-left: 1px solid rgba(255,255,255,.14); color: #fff; font-weight: 800; }
-        .hero-card__note { margin: 20px 0 0; color: #c8d6e2; font-size: 13px; }
+        .hero-card__note { margin: 20px 0 0; color: #c8d6e2; font-size: 13px; text-wrap: pretty; }
 
         .proof-strip { border-bottom: 1px solid var(--line); background: #fff; }
         .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
@@ -222,7 +232,7 @@
         }
         .card-number { display: flex; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 12px; background: #eef3f6; color: var(--navy); font-weight: 900; }
         .card h3 { margin: 21px 0 10px; color: var(--navy); font-size: 22px; line-height: 1.45; }
-        .card p { margin: 0; color: var(--muted); }
+        .card p { margin: 0; color: var(--muted); text-wrap: pretty; }
 
         .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; margin-top: 50px; }
         .principle-box { border-radius: 24px; background: var(--navy); color: #fff; padding: 36px; box-shadow: var(--shadow); }
@@ -255,7 +265,7 @@
         .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -13px; top: 29px; z-index: 2; color: var(--gold); font-weight: 900; }
         .flow-step b { color: var(--gold); font-size: 12px; letter-spacing: .08em; }
         .flow-step strong { display: block; margin-top: 9px; color: var(--navy); font-size: 17px; line-height: 1.45; }
-        .flow-step p { margin: 9px 0 0; color: var(--muted); font-size: 13px; }
+        .flow-step p { margin: 9px 0 0; color: var(--muted); font-size: 13px; text-wrap: pretty; }
 
         .role-table { margin-top: 46px; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: #fff; }
         .role-table__head, .role-row { display: grid; grid-template-columns: 1fr 1fr; }
@@ -269,27 +279,30 @@
         .package-item { counter-increment: package; min-height: 160px; border: 1px solid rgba(255,255,255,.15); border-radius: 18px; background: rgba(255,255,255,.06); padding: 24px; }
         .package-item::before { content: counter(package, decimal-leading-zero); display: block; color: #e4bd72; font-weight: 900; letter-spacing: .1em; }
         .package-item strong { display: block; margin-top: 12px; font-size: 18px; line-height: 1.45; }
-        .package-item p { margin: 8px 0 0; color: #bfcedb; font-size: 14px; }
+        .package-item p { margin: 8px 0 0; color: #bfcedb; font-size: 14px; text-wrap: pretty; }
         .confidential-note { margin-top: 24px; border-left: 3px solid var(--gold); padding: 10px 0 10px 18px; color: #cbd7e2; font-size: 14px; }
 
         .terms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
         .terms-card { border: 1px solid var(--line); border-top: 5px solid var(--gold); border-radius: 18px; background: #fff; padding: 28px; }
         .terms-card span { color: var(--muted); font-size: 13px; }
         .terms-card strong { display: block; margin-top: 8px; color: var(--navy); font-size: 27px; line-height: 1.3; }
-        .terms-card p { margin: 13px 0 0; color: var(--muted); font-size: 14px; }
+        .terms-card p { margin: 13px 0 0; color: var(--muted); font-size: 14px; text-wrap: pretty; }
         .terms-card__tax { font-size: .55em; }
 
-        .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 42px; }
-        .area-box { border-radius: 22px; padding: 30px; }
+        .area-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 24px; margin-top: 42px; }
+        .area-box { display: grid; grid-template-rows: auto 1fr; border-radius: 22px; padding: 30px; }
         .area-box--yes { border: 1px solid #bed8ce; background: #f2faf7; }
         .area-box--no { border: 1px solid #ebcaca; background: #fff7f7; }
         .area-box h3 { margin: 0 0 20px; color: var(--navy); font-size: 22px; }
-        .area-box ul { display: grid; gap: 13px; }
-        .region-note { margin-top: 26px; border: 1px solid #d5c39c; border-radius: 16px; background: #fffaf0; padding: 20px 24px; color: #674d1f; }
+        .area-box ul { display: grid; align-content: start; gap: 13px; }
+        .area-box li { text-wrap: pretty; }
+        .region-note { display: grid; gap: 8px; margin-top: 26px; border: 1px solid #d5c39c; border-radius: 16px; background: #fffaf0; padding: 20px 24px; color: #674d1f; text-wrap: pretty; }
+        .region-note p { margin: 0; }
 
         .formula { margin-top: 44px; border-radius: 24px; background: linear-gradient(135deg, #0f2943, #194b70); color: #fff; padding: 36px; text-align: center; box-shadow: var(--shadow); }
-        .formula span { display: block; color: #bed0df; font-size: 13px; letter-spacing: .06em; }
-        .formula strong { display: block; margin-top: 12px; color: #f0cf8d; font-size: clamp(22px, 4vw, 38px); line-height: 1.4; }
+        .formula > span { display: block; color: #bed0df; font-size: 13px; letter-spacing: .06em; }
+        .formula strong { display: block; margin-top: 12px; color: #f0cf8d; font-size: clamp(22px, 4vw, 38px); line-height: 1.4; text-wrap: balance; }
+        .formula strong span { color: inherit; font-size: inherit; letter-spacing: inherit; }
         .formula p { margin: 17px auto 0; max-width: 780px; color: #d7e2ea; font-size: 14px; }
 
         .timeline { display: grid; gap: 0; margin-top: 46px; counter-reset: timeline; }
@@ -298,7 +311,7 @@
         .timeline-item:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: var(--line); }
         .timeline-content { padding: 4px 0 30px; }
         .timeline-content strong { color: var(--navy); font-size: 19px; }
-        .timeline-content p { margin: 5px 0 0; color: var(--muted); }
+        .timeline-content p { margin: 5px 0 0; color: var(--muted); text-wrap: pretty; }
         .timeline-note { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
 
         .faq { display: grid; gap: 12px; margin-top: 42px; }
@@ -311,8 +324,8 @@
         .faq p { margin: 0; padding: 18px 22px 22px; color: var(--muted); }
 
         .cta-panel { border-radius: 30px; background: linear-gradient(135deg, #0b2036, #18496e); color: #fff; padding: 56px; box-shadow: var(--shadow); text-align: center; }
-        .cta-panel h2 { margin: 0; font-size: clamp(29px, 5vw, 48px); line-height: 1.35; }
-        .cta-panel p { max-width: 760px; margin: 22px auto 0; color: #d1dee8; font-size: 18px; }
+        .cta-panel h2 { margin: 0; font-size: clamp(29px, 5vw, 48px); line-height: 1.35; text-wrap: balance; }
+        .cta-panel p { max-width: 760px; margin: 22px auto 0; color: #d1dee8; font-size: 18px; text-wrap: pretty; }
         .cta-panel .button { margin-top: 30px; }
         .cta-panel small { display: block; margin-top: 16px; color: #aebfce; }
 
@@ -327,13 +340,20 @@
         .footer-links a { font-size: 13px; text-underline-offset: 4px; }
         .copyright { margin: 24px 0 0; border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px; color: #8fa2b2; font-size: 12px; }
 
+        @media (max-width: 1040px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-card { width: 100%; max-width: 760px; justify-self: center; }
+        }
         @media (max-width: 960px) {
             .nav a:not(.nav-cta) { display: none; }
-            .hero-grid, .split { grid-template-columns: 1fr; }
-            .hero-card { max-width: 600px; }
+            .split { grid-template-columns: 1fr; }
             .cards, .package-grid, .terms-grid { grid-template-columns: repeat(2, 1fr); }
             .flow { grid-template-columns: repeat(2, 1fr); }
             .flow-step::after { display: none; }
+            .cards > :last-child { grid-column: 1 / -1; width: calc((100% - 24px) / 2); justify-self: center; }
+            .package-grid > :last-child { grid-column: 1 / -1; width: calc((100% - 18px) / 2); justify-self: center; }
+            .terms-grid > :last-child { grid-column: 1 / -1; width: calc((100% - 22px) / 2); justify-self: center; }
+            .flow > :last-child { grid-column: 1 / -1; width: calc((100% - 14px) / 2); justify-self: center; }
         }
         @media (max-width: 680px) {
             .container, .narrow { width: min(100% - 28px, 1160px); }
@@ -345,13 +365,18 @@
             .menu-button { display: inline-flex; align-items: center; justify-content: center; }
             .hero { padding: 76px 0 70px; }
             .hero-grid { gap: 38px; }
+            .hero h1 { font-size: clamp(34px, 10vw, 42px); line-height: 1.22; }
             .hero-card { padding: 23px; border-radius: 22px; }
+            .principle-box { padding: 28px 22px; }
+            .principle-box h3 { font-size: 26px; }
             .hero-actions { flex-direction: column; }
             .button { width: 100%; }
             .proof-grid { grid-template-columns: repeat(2, 1fr); }
             .proof-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
             .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
             .cards, .package-grid, .terms-grid, .area-grid, .flow { grid-template-columns: 1fr; }
+            .cards > :last-child, .package-grid > :last-child, .terms-grid > :last-child, .flow > :last-child { grid-column: auto; width: auto; justify-self: stretch; }
+            .package-item { min-height: 0; }
             .role-table__head { display: none; }
             .role-row { grid-template-columns: 1fr; }
             .role-row > div::before { display: block; margin-bottom: 8px; color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
@@ -391,7 +416,11 @@
             <div class="container hero-grid">
                 <div>
                     <div class="hero-badge">法人限定・審査制</div>
-                    <h1>地域のお客様へ、地震後の<br><em>「家財を確認する選択肢」</em>を届ける。</h1>
+                    <h1>
+                        <span class="hero-title-line"><span class="nowrap">地域のお客様へ、</span><wbr><span class="nowrap">地震後の</span></span>
+                        <span class="hero-title-line"><em><span class="nowrap">「家財を確認する</span><wbr><span class="nowrap">選択肢」</span></em></span>
+                        <span class="hero-title-line">を届ける。</span>
+                    </h1>
                     <p class="hero-copy">HISAIDO地域優先パートナー契約は、既存顧客や店舗・拠点を持つ法人が、保険判断や申請代行を行うことなく、お客様をHISAIDOの家財状況確認支援へつなげる法人提携プログラムです。</p>
                     <div class="hero-actions">
                         <a class="button button--gold" href="./contact.html">法人提携の相談・審査へ</a>
@@ -448,7 +477,7 @@
 
                 <div class="split">
                     <aside class="principle-box" aria-labelledby="direct-data-title">
-                        <h3 id="direct-data-title">顧客情報は、<br>お客様からHISAIDOへ直接。</h3>
+                        <h3 id="direct-data-title"><span class="title-line">顧客情報は、</span><span class="title-line">お客様から</span><span class="title-line nowrap">HISAIDOへ直接。</span></h3>
                         <p>パートナー企業が保険証券、被害写真、家財情報等を預かり、HISAIDOへ渡す仕組みではありません。パートナーへは匿名案件IDと、報酬確認に必要な最小限の情報だけを共有します。</p>
                     </aside>
                     <div>
@@ -481,7 +510,10 @@
         <section id="package" class="section section--navy">
             <div class="container">
                 <p class="eyebrow">Implementation package</p>
-                <h2 class="section-title">1,000万円は、地域で適正に運用するための<br>初期実装の対価です。</h2>
+                <h2 class="section-title">
+                    <span class="title-line"><span class="nowrap">1,000万円は、</span><wbr><span class="nowrap">地域で適正に</span></span>
+                    <span class="title-line"><span class="nowrap">運用するための</span><wbr><span class="nowrap">初期実装の対価です。</span></span>
+                </h2>
                 <p class="section-lead">紹介権を購入する投資金ではありません。株式、持分、配当、元本、預り金、融資または特定の収益を得る権利も付与されません。</p>
                 <div class="package-grid">
                     <article class="package-item"><strong>導入計画</strong><p>対象地域、顧客接点、店舗・拠点を踏まえた運用設計</p></article>
@@ -510,7 +542,7 @@
 
                 <div class="formula">
                     <span>紹介業務報酬の計算式</span>
-                    <strong>（税抜サービス料の実受領額 − 返金・取消等）× 25％</strong>
+                    <strong><span class="nowrap">（税抜サービス料の</span><wbr><span class="nowrap">実受領額</span><wbr><span class="nowrap"> − 返金・取消等）</span><wbr><span class="nowrap">× 25％</span></strong>
                     <p>お客様が受領した保険金額を基準にしません。算定した報酬には法令上必要な消費税を加算し、報酬の振込手数料はHISAIDOが負担します。HISAIDOがサービス料を受領しない場合、紹介業務報酬は発生しません。売上・紹介件数・報酬額・初期導入費の回収は保証されません。</p>
                 </div>
             </div>
@@ -519,13 +551,19 @@
         <section class="section">
             <div class="container">
                 <p class="eyebrow">Regional priority</p>
-                <h2 class="section-title">「地域優先」は、地域全体の絶対的な独占権ではありません。</h2>
+                <h2 class="section-title">
+                    <span class="title-line"><span class="nowrap">「地域優先」は、</span><wbr><span class="nowrap">地域全体の</span></span>
+                    <span class="title-line"><span class="nowrap">絶対的な独占権</span><wbr><span class="nowrap">ではありません。</span></span>
+                </h2>
                 <p class="section-lead">契約条件と運用基準を満たしている期間中、HISAIDOは契約書で定めた同一地域に、別の地域優先パートナーを重ねて選任しません。対象地域は契約別紙で住所範囲を確定します。</p>
                 <div class="area-grid">
-                    <article class="area-box area-box--yes"><h3>地域優先に含まれること</h3><ul class="check-list"><li>合意地域に同種の地域優先パートナーを重ねて選任しない</li><li>専用導線からの有効紹介を記録する</li><li>契約前から適法な取引関係にある既存顧客が担当地域外に物件を持つ場合も、有効紹介なら25％の対象</li></ul></article>
-                    <article class="area-box area-box--no"><h3>地域優先に含まれないこと</h3><ul class="cross-list"><li>地域内の全顧客・全案件の所有</li><li>自然流入、直接相談、HISAIDOの既存顧客、先行登録案件の自動帰属</li><li>全国規模の法人・団体提携を禁止する権利</li><li>担当地域外への意図的な広告・新規営業</li><li>保険募集、交渉、損害認定を行う権限</li></ul></article>
+                    <article class="area-box area-box--yes"><h3>地域優先に含まれること</h3><ul class="check-list"><li>契約条件と運用基準を満たしている期間に限り、地域優先を適用する</li><li>契約書別紙で定めた同一地域に、同種の地域優先パートナーを重ねて選任しない</li><li>専用導線からの有効紹介を記録する</li><li>本契約締結前から適法な取引関係にある既存顧客が担当地域外に物件を所有し、正規の専用経路から有効登録した場合は、25％の紹介業務報酬の対象</li></ul></article>
+                    <article class="area-box area-box--no"><h3>地域優先に含まれないこと</h3><ul class="cross-list"><li>地域内の全顧客・全案件の所有</li><li>自然流入、直接相談、HISAIDOの既存顧客、先行登録案件の自動帰属</li><li>全国規模の法人・団体提携を禁止する権利</li><li>担当地域外で意図的な広告・新規営業を行う権限、または保険募集・交渉・損害認定を行う権限</li></ul></article>
                 </div>
-                <p class="region-note"><strong>直接運営地域：</strong>宮城県・岩手県・福島県は、現在HISAIDOが直接運営する地域のため、地域優先パートナーの対象外です。北海道その他の広域地域は、商圏と運用体制を確認して個別に地域を区分します。</p>
+                <div class="region-note">
+                    <p><strong>直接運営地域：</strong><span class="nowrap">宮城県・岩手県・福島県</span>は、現在HISAIDOが直接運営する地域のため、地域優先パートナーの対象外です。</p>
+                    <p><strong>広域地域：</strong>北海道その他の広域地域は、<span class="nowrap">商圏と運用体制</span>を確認して個別に地域を区分します。</p>
+                </div>
             </div>
         </section>
 
@@ -570,7 +608,7 @@
         <section class="section section--soft">
             <div class="container">
                 <div class="cta-panel">
-                    <h2>自社の顧客接点と希望地域が、<br>運用条件に適合するか確認しませんか。</h2>
+                    <h2><span class="title-line"><span class="nowrap">自社の顧客接点と</span><wbr><span class="nowrap">希望地域が、</span></span><span class="title-line"><span class="nowrap">運用条件に</span><wbr><span class="nowrap">適合するか</span><wbr><span class="nowrap">確認しませんか。</span></span></h2>
                     <p>まずは法人情報、希望地域、既存の顧客接点、案内可能な拠点を確認します。相談・審査の段階で契約や支払いを求めることはありません。</p>
                     <a class="button button--gold" href="./contact.html">地域適合性の確認を相談する</a>
                     <small>投資、融資、株式取得または個人向けサービスの申込み窓口ではありません。</small>
