@@ -228,7 +228,10 @@
         .principle-box { border-radius: 24px; background: var(--navy); color: #fff; padding: 36px; box-shadow: var(--shadow); }
         .principle-box h3 { margin: 0; font-size: 28px; line-height: 1.35; }
         .principle-box p { margin: 18px 0 0; color: #cddae5; }
+        .role-heading { margin: 0 0 22px; color: var(--navy); font-size: 26px; }
+        .role-heading--secondary { margin: 30px 0 18px; font-size: 20px; }
         .check-list, .cross-list { list-style: none; margin: 0; padding: 0; }
+        .cross-list--stacked { display: grid; gap: 13px; }
         .check-list { display: grid; gap: 15px; }
         .check-list li, .cross-list li { position: relative; padding-left: 34px; }
         .check-list li::before, .cross-list li::before {
@@ -274,6 +277,7 @@
         .terms-card span { color: var(--muted); font-size: 13px; }
         .terms-card strong { display: block; margin-top: 8px; color: var(--navy); font-size: 27px; line-height: 1.3; }
         .terms-card p { margin: 13px 0 0; color: var(--muted); font-size: 14px; }
+        .terms-card__tax { font-size: .55em; }
 
         .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 42px; }
         .area-box { border-radius: 22px; padding: 30px; }
@@ -295,6 +299,7 @@
         .timeline-content { padding: 4px 0 30px; }
         .timeline-content strong { color: var(--navy); font-size: 19px; }
         .timeline-content p { margin: 5px 0 0; color: var(--muted); }
+        .timeline-note { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
 
         .faq { display: grid; gap: 12px; margin-top: 42px; }
         .faq details { border: 1px solid var(--line); border-radius: 15px; background: #fff; overflow: hidden; }
@@ -407,14 +412,14 @@
             </div>
         </section>
 
-        <div class="proof-strip" aria-label="プログラム概要">
+        <section class="proof-strip" aria-label="プログラム概要">
             <div class="container proof-grid">
                 <div class="proof-item"><strong>専用導線</strong><span>URL・QR・パートナーID</span></div>
                 <div class="proof-item"><strong>承認済み資料</strong><span>案内文・POP・FAQ</span></div>
                 <div class="proof-item"><strong>役割の明確化</strong><span>保険判断・交渉は行わない</span></div>
                 <div class="proof-item"><strong>匿名明細</strong><span>顧客の詳細情報は共有しない</span></div>
             </div>
-        </div>
+        </section>
 
         <section id="program" class="section">
             <div class="container">
@@ -442,20 +447,20 @@
                 </div>
 
                 <div class="split">
-                    <aside class="principle-box">
-                        <h3>顧客情報は、<br>お客様からHISAIDOへ直接。</h3>
+                    <aside class="principle-box" aria-labelledby="direct-data-title">
+                        <h3 id="direct-data-title">顧客情報は、<br>お客様からHISAIDOへ直接。</h3>
                         <p>パートナー企業が保険証券、被害写真、家財情報等を預かり、HISAIDOへ渡す仕組みではありません。パートナーへは匿名案件IDと、報酬確認に必要な最小限の情報だけを共有します。</p>
                     </aside>
                     <div>
-                        <h3 style="margin:0 0 22px;color:var(--navy);font-size:26px;">HISAIDOの業務範囲</h3>
+                        <h3 class="role-heading">HISAIDOの業務範囲</h3>
                         <ul class="check-list">
                             <li>家財の被災状況を振り返るための確認支援</li>
                             <li>顧客から提供された事実の整理</li>
                             <li>申告資料の作成準備支援</li>
                             <li>サービスの受付、契約、料金管理</li>
                         </ul>
-                        <h3 style="margin:30px 0 18px;color:var(--navy);font-size:20px;">HISAIDOが行わないこと</h3>
-                        <ul class="cross-list" style="display:grid;gap:13px;">
+                        <h3 class="role-heading role-heading--secondary">HISAIDOが行わないこと</h3>
+                        <ul class="cross-list cross-list--stacked">
                             <li>保険会社との交渉・代理請求・法律判断</li>
                             <li>損害認定、認定区分または支払額の保証</li>
                             <li>虚偽、水増し、事実と異なる申告への関与</li>
@@ -463,7 +468,7 @@
                     </div>
                 </div>
 
-                <div class="role-table" aria-label="パートナー企業とHISAIDOの役割分担">
+                <div class="role-table" role="group" aria-label="パートナー企業とHISAIDOの役割分担">
                     <div class="role-table__head"><div>パートナー企業</div><div>HISAIDO</div></div>
                     <div class="role-row"><div>承認済み案内物の設置・送付</div><div>お客様からの直接受付</div></div>
                     <div class="role-row"><div>専用URL・QRの案内</div><div>家財状況の確認と事実整理</div></div>
@@ -498,15 +503,15 @@
                 <p class="eyebrow">Contract conditions</p>
                 <h2 class="section-title">契約条件を、申込み前に明確にします。</h2>
                 <div class="terms-grid">
-                    <article class="terms-card"><span>初期導入費</span><strong>1,000万円<br><small style="font-size:.55em;">（税別）</small></strong><p>契約時500万円、初期実装の検収合格後500万円。相談・審査段階では料金は発生しません。</p></article>
-                    <article class="terms-card"><span>初回契約期間</span><strong>3年間</strong><p>以後は1年単位の自動更新。通常の更新料はありません。更新停止の条件は契約書で明示します。</p></article>
+                    <article class="terms-card"><span>初期導入費</span><strong>1,000万円<br><small class="terms-card__tax">（税別）</small></strong><p>契約後500万円、初期実装の検収完了後500万円。各請求書の受領から7営業日以内にお支払いいただきます。相談・審査段階では料金は発生しません。</p></article>
+                    <article class="terms-card"><span>初回契約期間</span><strong>3年間</strong><p>以後は1年単位の自動更新。通常の更新料はなく、更新を停止する場合は満了日の90日前までに通知します。</p></article>
                     <article class="terms-card"><span>紹介業務報酬</span><strong>25％</strong><p>HISAIDOが実際に受領した対象サービス料の税抜額から、返金等を控除した金額を基準に計算します。</p></article>
                 </div>
 
                 <div class="formula">
                     <span>紹介業務報酬の計算式</span>
                     <strong>（税抜サービス料の実受領額 − 返金・取消等）× 25％</strong>
-                    <p>お客様が受領した保険金額を基準にしません。HISAIDOがサービス料を受領しない場合、紹介業務報酬は発生しません。売上・紹介件数・報酬額・初期導入費の回収は保証されません。</p>
+                    <p>お客様が受領した保険金額を基準にしません。算定した報酬には法令上必要な消費税を加算し、報酬の振込手数料はHISAIDOが負担します。HISAIDOがサービス料を受領しない場合、紹介業務報酬は発生しません。売上・紹介件数・報酬額・初期導入費の回収は保証されません。</p>
                 </div>
             </div>
         </section>
@@ -517,8 +522,8 @@
                 <h2 class="section-title">「地域優先」は、地域全体の絶対的な独占権ではありません。</h2>
                 <p class="section-lead">契約条件と運用基準を満たしている期間中、HISAIDOは契約書で定めた同一地域に、別の地域優先パートナーを重ねて選任しません。対象地域は契約別紙で住所範囲を確定します。</p>
                 <div class="area-grid">
-                    <article class="area-box area-box--yes"><h3>地域優先に含まれること</h3><ul class="check-list"><li>合意地域に同種の地域優先パートナーを重ねて選任しない</li><li>専用導線からの有効紹介を記録する</li><li>担当地域外に物件を持つ既存顧客も、有効紹介なら25％の対象</li></ul></article>
-                    <article class="area-box area-box--no"><h3>地域優先に含まれないこと</h3><ul class="cross-list"><li>地域内の全顧客・全案件の所有</li><li>HISAIDOへの自然流入・直接相談の自動帰属</li><li>担当地域外への意図的な広告・新規営業</li><li>保険募集、交渉、損害認定を行う権限</li></ul></article>
+                    <article class="area-box area-box--yes"><h3>地域優先に含まれること</h3><ul class="check-list"><li>合意地域に同種の地域優先パートナーを重ねて選任しない</li><li>専用導線からの有効紹介を記録する</li><li>契約前から適法な取引関係にある既存顧客が担当地域外に物件を持つ場合も、有効紹介なら25％の対象</li></ul></article>
+                    <article class="area-box area-box--no"><h3>地域優先に含まれないこと</h3><ul class="cross-list"><li>地域内の全顧客・全案件の所有</li><li>自然流入、直接相談、HISAIDOの既存顧客、先行登録案件の自動帰属</li><li>全国規模の法人・団体提携を禁止する権利</li><li>担当地域外への意図的な広告・新規営業</li><li>保険募集、交渉、損害認定を行う権限</li></ul></article>
                 </div>
                 <p class="region-note"><strong>直接運営地域：</strong>宮城県・岩手県・福島県は、現在HISAIDOが直接運営する地域のため、地域優先パートナーの対象外です。北海道その他の広域地域は、商圏と運用体制を確認して個別に地域を区分します。</p>
             </div>
@@ -535,10 +540,10 @@
                     <article class="timeline-item"><div class="timeline-content"><strong>重要事項と契約書の確認</strong><p>費用、返金、期間、解除、地域例外、非保証を契約前に確認します。</p></div></article>
                     <article class="timeline-item"><div class="timeline-content"><strong>契約・第1回支払い</strong><p>契約締結後、初期導入費の50％をお支払いいただき、導入設計を開始します。</p></div></article>
                     <article class="timeline-item"><div class="timeline-content"><strong>専用環境・資料・研修の実装</strong><p>紹介導線、案内物、マニュアル、研修、集計環境を整えます。</p></div></article>
-                    <article class="timeline-item"><div class="timeline-content"><strong>動作確認・検収</strong><p>お客様登録から紹介記録、通知、匿名明細までを試験します。</p></div></article>
-                    <article class="timeline-item"><div class="timeline-content"><strong>第2回支払い・本運用開始</strong><p>検収合格後、残額50％をお支払いいただき、本運用を開始します。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>動作確認・検収</strong><p>お客様登録から紹介記録、通知、匿名明細までを試験します。導入完了通知後10営業日以内に、検収完了または具体的な不一致をご連絡ください。</p></div></article>
+                    <article class="timeline-item"><div class="timeline-content"><strong>第2回支払い・本運用開始</strong><p>検収完了後、残額50％を請求書受領から7営業日以内にお支払いいただき、本運用を開始します。回答がない場合のみ、再確認後5営業日の確認期間を経て検収完了となることがあります。</p></div></article>
                 </div>
-                <p style="margin:8px 0 0;color:var(--muted);font-size:14px;">先着順や決済順での即時確保ではありません。地域、顧客接点、運用体制、法令順守を確認したうえで判断します。</p>
+                <p class="timeline-note">先着順や決済順での即時確保ではありません。地域、顧客接点、運用体制、法令順守を確認したうえで判断します。</p>
             </div>
         </section>
 
@@ -552,10 +557,11 @@
                     <details><summary>25％の紹介業務報酬は必ず受け取れますか？</summary><p>いいえ。正規の紹介案件について、HISAIDOが税抜サービス料を実際に受領した場合に発生します。紹介件数、売上、初期導入費の回収は保証されません。</p></details>
                     <details><summary>パートナー企業が保険について説明する必要はありますか？</summary><p>個別の保険契約、補償内容、損害認定、支払見込みを判断・説明せず、承認済み案内物からHISAIDOへつないでください。</p></details>
                     <details><summary>お客様の個人情報をHISAIDOへ渡しますか？</summary><p>原則として渡しません。お客様自身がHISAIDOへ直接登録します。パートナー企業には、個別の保険情報や損害内容ではなく、匿名案件IDと報酬確認に必要な情報だけをお知らせします。</p></details>
-                    <details><summary>担当地域外の既存顧客は対象になりますか？</summary><p>既存顧客が担当地域外に物件を所有している場合でも、正規の専用導線から登録された有効案件は紹介業務報酬の対象です。地域外への意図的な広告や新規営業はできません。</p></details>
-                    <details><summary>更新料はかかりますか？</summary><p>通常の更新料はありません。当初3年間の後、1年単位で自動更新します。地域優先の維持には、研修や承認資料の利用等の運用基準があります。</p></details>
+                    <details><summary>担当地域外の既存顧客は対象になりますか？</summary><p>本契約締結前から適法な取引関係にある既存顧客が担当地域外に物件を所有している場合でも、正規の専用導線から登録された有効案件は紹介業務報酬の対象です。地域外への意図的な広告や新規営業はできません。</p></details>
+                    <details><summary>更新料はかかりますか？</summary><p>通常の更新料はありません。当初3年間の後、1年単位で自動更新します。更新を停止する場合は満了日の90日前までに通知します。</p></details>
+                    <details><summary>地域優先を維持する条件は何ですか？</summary><p>合意場所での承認済みPOP・QRの維持、年2回以上の顧客案内、年1回の研修、四半期ごとの活動報告、重大な違反がないことが基本です。不足がある場合は具体的に通知し、原則30日の是正期間を設けます。未是正の重大な違反が続く場合に地域優先を一時停止し、是正後は再開します。</p></details>
                     <details><summary>案内物を自社向けに変更できますか？</summary><p>事前承認を受けた範囲で共同表示や必要な調整ができます。誤認を防ぐため、文章や画像を無断で変更することはできません。</p></details>
-                    <details><summary>途中解約や返金はどうなりますか？</summary><p>検収前は、工程別の完了部分、客観的な出来高、事前承認済みの取消不能費用を精算し、未実施分を返金します。検収後は初期導入業務が完了しているため、売上や紹介件数が予想を下回ったことを理由とする返金はありません。詳細は契約前重要事項説明書と契約書で確認します。</p></details>
+                    <details><summary>途中解約や返金はどうなりますか？</summary><p>検収前は、工程別の完了部分、客観的な出来高、事前承認済みの取消不能費用を精算します。支払済額が精算額を上回る場合は差額を返金し、精算額が支払済額を上回る場合は初期導入費総額を上限に差額をお支払いいただきます。検収後は90日前までの通知で解約できますが、売上や紹介件数が予想を下回ったことを理由とする初期導入費の返金はありません。</p></details>
                     <details><summary>HISAIDOの利用で保険金支払いは確定しますか？</summary><p>確定しません。損害認定、認定区分および保険金支払いは保険会社が最終判断します。お客様はHISAIDOを利用せず、保険会社へ直接相談・請求することもできます。</p></details>
                 </div>
             </div>
@@ -589,6 +595,7 @@
                 <nav class="footer-links" aria-label="法務・関連情報">
                     <a href="./terms.html">法人提携条件</a>
                     <a href="./privacy.html">法人向けプライバシーポリシー</a>
+                    <a href="../legal.html">運営者情報・特商法表記</a>
                     <a href="mailto:hisaido@flh.works">お問い合わせ</a>
                     <a href="../">個人向けHISAIDO</a>
                 </nav>
