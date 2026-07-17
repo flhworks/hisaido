@@ -23,13 +23,29 @@
         (() => {
             'use strict';
             const endpoint = 'https://script.google.com/macros/s/AKfycbwlQUXBFofenTSxIbFNXO2CvheeHWL0nku9upnQ7MdQYv2sEWfwfPx1dVC06QpYb-gYZQ/exec';
-            const allowed = new Set(['c', 'campaign', 'utm_source', 'utm_medium', 'utm_campaign', 'v']);
             const source = new URL(window.location.href);
             const target = new URL(endpoint);
+            const referralCode = String(source.searchParams.get('c') || 'DIRECT').trim().toUpperCase();
+            const campaignPattern = /^CMP-[A-Z0-9]{4,24}$/;
+            const channelPattern = /^(line|email|web|qr|print|partner|direct|other|social|cpc)$/;
+            const versionPattern = /^\d{1,3}\.\d{1,3}$/;
 
-            source.searchParams.forEach((value, key) => {
-                if (allowed.has(key)) target.searchParams.set(key, value);
-            });
+            if (referralCode === 'DIRECT' || /^[23456789ABCDEFGHJKLMNPQRSTUVWXYZ]{8}$/.test(referralCode)) {
+                target.searchParams.set('c', referralCode);
+            } else {
+                target.searchParams.set('c', 'INVALID');
+            }
+
+            const campaign = String(source.searchParams.get('campaign') || '').trim().toUpperCase();
+            const utmCampaign = String(source.searchParams.get('utm_campaign') || '').trim().toUpperCase();
+            const utmSource = String(source.searchParams.get('utm_source') || '').trim().toLowerCase();
+            const utmMedium = String(source.searchParams.get('utm_medium') || '').trim().toLowerCase();
+            const version = String(source.searchParams.get('v') || '').trim();
+            if (campaignPattern.test(campaign)) target.searchParams.set('campaign', campaign);
+            if (campaignPattern.test(utmCampaign)) target.searchParams.set('utm_campaign', utmCampaign);
+            if (channelPattern.test(utmSource)) target.searchParams.set('utm_source', utmSource);
+            if (channelPattern.test(utmMedium)) target.searchParams.set('utm_medium', utmMedium);
+            if (versionPattern.test(version)) target.searchParams.set('v', version);
 
             const destination = target.toString();
             document.getElementById('continue').href = destination;
